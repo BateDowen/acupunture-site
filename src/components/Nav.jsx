@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const Nav = () => {
   return (
     <div className="flex">
-    <section className="flex-1 flex flex-row justify-between items-center bg-white fixed w-[100%] shadow-md z-30">
+    <section className="flex flex-row justify-between items-center bg-white fixed w-[100%] shadow-md z-30">
         <div className="p-10 text-[#48B6BB]" >
             <img src='../../logo.webp' alt="" height={100} width={100} />
         </div>
