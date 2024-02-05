@@ -12,7 +12,7 @@ const Home = () => {
            "
       ></section>
       <div
-        className="text-center mt-12 w-full absolute top-[10%]"
+        className="text-center mt-12 w-full absolute top-[3%]"
       >
         <h1 className="  uppercase text-2xl sm:text-4xl text-[#2A6466] font-bold mb-3 ">
           Студио за рехабилитация
@@ -43,7 +43,7 @@ const Home = () => {
       <div className=" my-6 mx-auto">
         <h3 className="text-[#48B6BB] basis-full font-medium text-3xl uppercase mb-10">Последни публикации</h3>
         {/* // TODO blog-card template */}
-        <div className="flex flex-row flex-wrap justify-center">
+        <div className="flex flex-row flex-wrap justify-start ">
           <BlogCard href={''} src={'../../../public/massage.jpg'} />
           <BlogCard href={''} src={'../../../public/massage.jpg'} />
           <BlogCard href={''} src={'../../../public/massage.jpg'} />
