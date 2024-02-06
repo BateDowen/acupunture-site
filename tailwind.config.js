@@ -24,9 +24,10 @@ export default {
     boxShadow: {
       'customGray': 'rgba(0, 0, 0, 0.2) 0 0 20px'
     },
-    backgroundColor: {
+    colors: {
       'lightBlue' : '#48b6bb',
-      'hoverBlue' : '#2A6466'
+      'hoverBlue' : '#2A6466',
+      'black' : '#000000'
     }
     },
   },

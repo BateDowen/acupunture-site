@@ -12,7 +12,7 @@ const BlogCard = ({href,src}) => {
       </a>
       <div className='text-[#FFFFFF] font-bold rounded-full
       bg-[#48b6bb] cursor-pointer py-2 px-5 absolute max-md:right-[15%]
-       max-sm:right-[2%] right-[-1%] top-[-5%] shadow-customGray'>
+       max-sm:right-[5%] right-[-1%] top-[-5%] shadow-customGray'>
         05.02.2024
       </div>
     </div>
