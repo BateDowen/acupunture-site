@@ -1,0 +1,10 @@
+.fade-in {
+    
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 0px 300px;
+}
+@keyframes fade-in{
+    from {scale: .8; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+}

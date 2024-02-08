@@ -1,0 +1,6 @@
+.lightBlue {
+    @apply bg-[#48b6bb]
+}
+.hoverBlue {
+    @apply bg-[#2A6466]
+}

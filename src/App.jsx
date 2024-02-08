@@ -1,15 +1,26 @@
 import React from 'react'
 import Nav from './components/Nav'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import About from './Pages/About'
 import Prices from './Pages/Prices'
 import Contacts from './Pages/Contacts'
 import Home from './Pages/Home'
+import Footer from './components/Footer'
 
+
+const Layout =() => {
+    return (
+      <>
+        <Nav />
+        <Outlet />
+        <Footer />
+      </>
+    )
+}
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Nav/>,
+    element: <Layout/>,
     children:[
           {
             path: '/',
@@ -33,7 +44,10 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div>
+      <div >
       <RouterProvider router={router}/>
+      </div>
+      {/* <Footer /> */}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 const Nav = () => {
   return (
@@ -17,8 +18,8 @@ const Nav = () => {
             <img src='../../public/hamburger.svg' alt="hamb" width={25} height={25} />
         </div>
     </section>
-    <Outlet />
-    
+    {/* <Outlet /> */}
+    {/* <Footer /> */}
     </div>
     
   )

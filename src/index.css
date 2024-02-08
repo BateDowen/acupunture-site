@@ -6,4 +6,6 @@ body{
     font-family: 'Commissioner', sans-serif;
     font-weight: 300;
     background-color: #FFFFFF;
+    position: relative;
+    min-height: 100vh;
 }

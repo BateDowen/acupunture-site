@@ -18,8 +18,10 @@ export default {
          }
         }
       },
+     
     animation:{
-      'fade-up': 'fade-up 2s ease-in-out '
+      'fade-up': 'fade-up 2s ease-in-out ',
+
     },
     boxShadow: {
       'customGray': 'rgba(0, 0, 0, 0.2) 0 0 20px'
@@ -27,7 +29,6 @@ export default {
     colors: {
       'lightBlue' : '#48b6bb',
       'hoverBlue' : '#2A6466',
-      'black' : '#000000'
     }
     },
   },
