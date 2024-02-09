@@ -21,7 +21,7 @@ const Home = () => {
         </h1>
         <p className=" text-[20px] text-[#414141] mb-3">Масажен терапевт</p>
 
-        <Button bg="lightBlue" hover="hoverBlue">Запазете час</Button>
+        <Button bg="btn-primary">Запазете час</Button>
       </div>
       <div className=" pt-12 pb-12 w-full ">
           <div className="flex flex-row justify-center max-[640px]:flex-col items-center px-12">
@@ -35,7 +35,7 @@ const Home = () => {
                 <p className="my-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                   Cupiditate repellat amet omnis fugit. Porro consequuntur quod explicabo et fuga facilis?</p>
               <div className="my-2">
-                <Button bg={'lightBlue'} hover={'hoverBlue'}>Контакти</Button>
+                <Button bg='btn-primary'>Контакти</Button>
               </ div>
             </div>
                 <img src="'../../../public/massage.jpg" alt="massage" 
@@ -51,7 +51,7 @@ const Home = () => {
           <BlogCard href={''} src={'../../../public/massage.jpg'} />
         </div>
         <div className="my-2">
-          <Button bg={'hoverBlue'} hover={'lightBlue'}>Виж всички</Button>
+          <Button bg='btn-secondary'>Виж всички</Button>
         </div>
       </div>
       <div className="mx-auto py-5 bg-[#F5FCFC] ">

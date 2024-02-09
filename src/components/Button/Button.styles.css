@@ -1,6 +1,6 @@
-.lightBlue {
-    @apply bg-[#48b6bb]
+.btn-primary {
+    @apply bg-[#48b6bb] hover:bg-hoverBlue
 }
-.hoverBlue {
-    @apply bg-[#2A6466]
+.btn-secondary{
+    @apply bg-hoverBlue hover:bg-[#153839]
 }
