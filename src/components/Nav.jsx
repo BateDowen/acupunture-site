@@ -10,7 +10,7 @@ const Nav = () => {
         </div>
         <ul className="flex justify-between  min-w-[60%] pr-10 max-sm:hidden">
             <NavLink to={'/'} className='text-[#747272] hover:text-[#46a5aaf5]'>Начало</NavLink>
-            <NavLink to={'/about'} className='text-[#747272] hover:text-[#46a5aaf5]'>За нас</NavLink>
+            <NavLink to={'/about'} className='text-[#747272] hover:text-[#46a5aaf5]'>За мен</NavLink>
             <NavLink to={'/prices'} className='text-[#747272] hover:text-[#46a5aaf5]'>Цени</NavLink>
             <NavLink to={'/contacts'} className='text-[#747272] hover:text-[#46a5aaf5]'>Контакти</NavLink>
         </ul>
