@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sistemFont': ['Commissioner', 'sans-serif']
+      },
       keyframes:{
         'fade-up':{
          '0%':{
