@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "../components/Button/Button";
 import BlogCard from "../components/Card/BlogCard";
 import Form from "../components/Form/Form";
@@ -23,20 +24,15 @@ const Home = () => {
           <div className="flex flex-col text-left mx-4">
             <h2 className={`uppercase ${titleCss}`}>За мен</h2>
             <p className=" my-2">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Cupiditate repellat amet omnis fugit. Porro consequuntur quod
-              explicabo et fuga facilis? Cupiditate repellat amet omnis fugit.
-              Porro consequuntur quod explicabo et fuga facilis? Cupiditate
-              repellat amet omnis fugit. Porro consequuntur quod explicabo et
-              fuga facilis?
-            </p>
-            <p className="my-2">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Cupiditate repellat amet omnis fugit. Porro consequuntur quod
-              explicabo et fuga facilis?
+              Работата ми е базирана в използването на няколко методики за
+              справяне с хронична болка, травми и различни състояния на тялото .
+              Лечебният масаж е в основата на първи избор, съчетан с акупунктура
+              ( иглотерапия) и вендузотерапия.
             </p>
             <div className="my-2">
-              <Button bg="btn-primary">Контакти</Button>
+              <NavLink to={"/contacts"}>
+                <Button bg="btn-primary">Контакти</Button>
+              </NavLink>
             </div>
           </div>
           <img

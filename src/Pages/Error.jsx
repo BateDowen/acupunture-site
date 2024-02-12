@@ -1,9 +1,10 @@
 import React from 'react'
 import Button from '../components/Button/Button';
+import { NavLink } from 'react-router-dom';
 
 const Error = () => {
   const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-3";
-
+  
   return (
     <div className=" bg-white relative pt-[100px] w-full mx-auto text-center">
     <section className="flex flex-row w-full justify-around mt-[80px] ">
@@ -13,7 +14,10 @@ const Error = () => {
       </div>
       </section>
       <div className='mx-auto mb-5 text-center'>
-        <Button bg='btn-primary'>Назад</Button>
+        <NavLink to={'/'} >
+            <Button bg='btn-primary'>Назад</Button>
+
+        </NavLink>
 
       </div>
     </div>

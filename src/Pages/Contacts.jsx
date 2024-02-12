@@ -121,7 +121,6 @@ const Contacts = () => {
         <div className="w-[280px] sm:w-[58%]">
           <iframe
             src="https://maps.google.com/maps?q=plovdiv%20ul.%208-mi%20mart%201&t=m&z=14&output=embed&iwloc=near"
-            frameborder="0"
             className="bg-white p-3 rounded-md shadow-md h-[300px] w-full"
           ></iframe>
         </div>
