@@ -6,6 +6,7 @@ import Prices from './Pages/Prices'
 import Contacts from './Pages/Contacts'
 import Home from './Pages/Home'
 import Footer from './components/Footer'
+import Error from './Pages/Error'
 
 
 const Layout =() => {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             path: '/contacts',
             element: <Contacts />
           },
+          {
+            path: 'error',
+            element: <Error />
+          }
       ]
   },
 ])
