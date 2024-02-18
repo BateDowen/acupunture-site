@@ -36,4 +36,6 @@ import * as api from './api.js'
   export const getDate = async (date) => {
     return api.get(`hours/${date}`)
   }
-
+  export const createDate = async (date) => {
+    return api.post(`hours/${date}`)
+  }
