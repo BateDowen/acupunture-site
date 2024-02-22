@@ -7,7 +7,7 @@ const request = async (method,url, data) => {
     };
 
     if (data != undefined) {
-        options.headers['Content-type'] = 'aplication/json';
+        options.headers['Content-type'] = 'application/json';
         options.body = JSON.stringify(data);
 
     };
@@ -15,8 +15,9 @@ const request = async (method,url, data) => {
     try {
         const responce = await fetch(host + url, options);
         if (!responce.ok) {
+            console.log(responce);
             const err = await responce.json();
-            throw new Error(err)
+            throw new Error(err.message)
         }
         return responce.json()
     } catch (error) {

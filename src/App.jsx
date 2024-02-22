@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Error from './Pages/Error'
 import Appointments from './Pages/Appointments'
 import AvailableHours from './Pages/AvailableHours'
+import BookHour from './Pages/BookHour'
 
 
 const Layout =() => {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
           {
             path: '/hours/:date',
             element: <AvailableHours />
+          },
+          {
+            path: '/hours/:date/:hourKey/:hour',
+            element: <BookHour />
           },
           {
             path: 'error',
