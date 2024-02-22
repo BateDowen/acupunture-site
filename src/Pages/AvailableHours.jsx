@@ -5,17 +5,19 @@ import { getDate } from "../Utils";
 
 const AvailableHours =  () => {
   const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-6";
-  const [info,setInfo] = useState(null)
+  const [availableHours,setAvailableHours] = useState(null)
+  const [availableHoursKeys,setAvailableHoursKeys] = useState(null)
   const { date } = useParams();
 
   useEffect(() => {
     const response = getDate(date)
     .then(result => {
-      return result ? Object.values(result.availableHours) : null;
+      return [result ? Object.values(result.availableHours) : null, result];
     })
     .then(result =>{
-      console.log(result);
-      setInfo(result)
+      const keys = Object.keys(result[1].availableHours)
+      setAvailableHoursKeys(keys)
+      setAvailableHours(result[0])
     })
     
   },[date])
@@ -31,18 +33,21 @@ const AvailableHours =  () => {
       <div className="text-center flex justify-center h-[600px] bg-hoverBlue">
           <div className="flex flex-col md:flex-row max-w-[650px] flex-wrap py-7 justify-around">
           {
-            info != null ? (
-                info.map((h) => {
-                  
+            availableHours != null ? (
+                availableHours.map((h,index) => {
+      // console.log(availableHoursKeys[index]);
+                 
                   return (
-                    <div
-                    key={h}
-                    className="w-[300px] h-10 py-2 rounded-md bg-[#F5FCFC]
-                    font-bold text-hoverBlue hover:text-[#ffffff]
-                    hover:bg-lightBlue transition-all ease-linear shadow-customGray"
-                    >
-                    {h}
-                  </div>
+                    <Link key={h} to={`/hours/${date}/${availableHoursKeys[index]}/${h}`}>
+                      <div
+                      
+                      className="w-[300px] h-10 py-2 rounded-md bg-[#F5FCFC]
+                      font-bold text-hoverBlue hover:text-[#ffffff]
+                      hover:bg-lightBlue transition-all ease-linear shadow-customGray"
+                      >
+                      {h}
+                      </div>
+                    </Link>
                 );
               })
               ) : (
