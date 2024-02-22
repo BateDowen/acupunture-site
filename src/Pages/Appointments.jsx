@@ -17,6 +17,8 @@ const Appointments = () => {
     console.log(date.getTime());
   }
  const dateTocheckAndCreate = () => {
+  // TODO authorize:
+  
   const response = getDate(dateToCheck)
   .then(res => {
     if (!res) {
