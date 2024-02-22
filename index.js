@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import hourRouter from "./api/routes/hours.js";
+import hourRouter from "./server/routes/hours.js";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3030;
 dotenv.config();
-
-app.use(express.json());
+app.use(bodyParser.json())
 
 app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin','*');
@@ -16,6 +16,8 @@ app.use((req,res,next) => {
     next()
 })
 app.use('/hours', hourRouter);
+
+
 const connect = async () => {
     try {
       await  mongoose.connect(process.env.MONGO);
