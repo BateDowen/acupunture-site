@@ -63,11 +63,14 @@ const AvailableHours =  () => {
                 </p>
               </div>
             )}
-            <Link to={"/appointments"}>
-              <Button bg={"btn-primary"}>Назад</Button>
-            </Link>
           </div>
         </div>
+        <div className="bg-hoverBlue w-full pb-5">
+        <Link to={"/appointments"}>
+              <Button bg={"btn-primary"}>Назад</Button>
+            </Link>
+        </div>
+           
       </div>
     );
   };
