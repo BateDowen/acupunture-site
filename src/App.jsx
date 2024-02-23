@@ -6,18 +6,19 @@ import Prices from "./Pages/Prices";
 import Contacts from "./Pages/Contacts";
 import Home from "./Pages/Home";
 import Footer from "./components/Footer";
-import Error from "./Pages/Error";
+import Error from "./Pages/ErrorPage";
 import Appointments from "./Pages/Appointments";
 import AvailableHours from "./Pages/AvailableHours";
 import BookHour from "./Pages/BookHour";
 import { LoadingProvider } from "./components/Loader/LoadingCtx";
+import ErrorPage from "./Pages/ErrorPage";
 
 const Layout = () => {
   return (
     <>
       <Nav />
       <Outlet />
-      <Footer />
+      <Footer /> 
     </>
   );
 };
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
