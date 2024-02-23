@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Button from "../components/Button/Button";
 import { getDate } from "../Utils";
+import { useLoading } from "../components/Loader/LoadingCtx";
+import LoaderModal from "../components/Loader/LoaderModal";
 
 const AvailableHours =  () => {
   const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-6";
   const [availableHours,setAvailableHours] = useState(null)
   const [availableHoursKeys,setAvailableHoursKeys] = useState(null)
   const { date } = useParams();
-
+  const {loading,showLoader,hideLoader} = useLoading()
+  
   useEffect(() => {
+    showLoader()
     const response = getDate(date)
     .then(result => {
       return [result ? Object.values(result.availableHours) : null, result];
@@ -18,12 +22,14 @@ const AvailableHours =  () => {
       const keys = Object.keys(result[1].availableHours)
       setAvailableHoursKeys(keys)
       setAvailableHours(result[0])
+      hideLoader()
     })
     
   },[date])
   // TODO loading...
 
     return (
+      loading? <LoaderModal/>:
     <div className="bg-[#F5FCFC] relative pt-[100px] w-full mb-0 mx-auto text-center">
       <section className="flex flex-row w-full justify-around mt-[120px] ">
         <div className={` flex flex-col w-full mx-12`}>
