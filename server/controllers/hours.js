@@ -1,4 +1,4 @@
-import {BookingRecord} from "../models/BookingSchema.js";
+import { BookingRecord } from "../models/BookingSchema.js";
 import { Hours } from "../models/Hours.js";
 
 let availableHours = {
@@ -18,7 +18,7 @@ export const getDate = (req, res, next) => {
     date: reqDate,
   })
     .then((result) => {
-        res.status(200).json(result)
+      res.status(200).json(result);
     })
     .catch((err) => {
       console.log({ err });
@@ -54,35 +54,43 @@ export const updateDate = (req, res, next) => {
   });
 };
 export const bookHour = (req, res, next) => {
-    console.log(req.body);
-    const hour = Hours.find({date:req.body.date},{availableHours: req.body.hourKey}).exec();
-        if (!hour) {
-            const error = new Error('Съжаляваме, този час не е свободен!');
-            error.statusCode = 404;
-            throw error;
-        };
-        const booking = new BookingRecord({
-            bookingDate: req.body.date,
-            hour: req.body.hour,
-            hourKey: req.body.hourKey,
-            firstName: req.body.name,
-            phone: req.body.phone,
-            email: req.body.email
-        })
-        return booking.save()
-        .then(result => {
-            // console.log(result);
-            const newHours = {...availableHours};
-            delete newHours[req.body.hourKey]
-            console.log(availableHours);
-            console.log(newHours);
-            Hours.findOneAndUpdate({date:req.body.date},{availableHours: newHours},{new:true}).exec()
+  const date = req.body.date;
+  const hourKey = req.body.hourKey;
 
-            res.status(201).json({message: 'Часът е записан',})
-
-        })
-        .catch((err) => {
-            console.log(err);
-            next(res.json({err,message:err.message}))
-        });
-}
+  Hours.findOne({ date: date })
+  .then((hour) => {
+    if (!hour.availableHours[hourKey]) {
+      const error = new Error("Съжаляваме, този час не е свободен!");
+      error.statusCode = 404;
+      throw error;
+    }
+    const booking = new BookingRecord({
+      bookingDate: req.body.date,
+      hour: req.body.hour,
+      hourKey: req.body.hourKey,
+      firstName: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+    });
+    return booking
+    .save()
+    .then((result) => {
+      // console.log(result);
+      const newHours = { ...availableHours };
+      delete newHours[req.body.hourKey];
+      console.log(availableHours);
+      console.log(newHours);
+      Hours.findOneAndUpdate(
+        { date: req.body.date },
+        { availableHours: newHours },
+        { new: true }
+        ).exec();
+        
+        res.status(201).json({ message: "Часът е записан!" });
+      })
+    })
+      .catch((err) => {
+        console.log(err);
+        next(res.json({ err, message: err.message }));
+      });
+};

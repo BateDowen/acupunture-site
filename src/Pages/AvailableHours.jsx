@@ -41,8 +41,7 @@ const AvailableHours =  () => {
           {
             availableHours != null ? (
                 availableHours.map((h,index) => {
-      // console.log(availableHoursKeys[index]);
-                 
+                //  TODO authorize
                   return (
                     <Link key={h} to={`/hours/${date}/${availableHoursKeys[index]}/${h}`}>
                       <div
