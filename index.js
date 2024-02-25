@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import hourRouter from "./server/routes/hours.js";
 import bodyParser from "body-parser";
+import authRouter from "./server/routes/auth.js";
 
 const app = express();
 const port = 3030;
@@ -16,7 +17,7 @@ app.use((req,res,next) => {
     next()
 })
 app.use('/hours', hourRouter);
-
+app.use('/auth',authRouter)
 
 const connect = async () => {
     try {

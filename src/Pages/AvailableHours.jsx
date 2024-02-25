@@ -14,7 +14,7 @@ const AvailableHours =  () => {
   
   useEffect(() => {
     showLoader()
-    const response = getDate(date)
+    getDate(date)
     .then(result => {
       return [result ? Object.values(result.availableHours) : null, result];
     })
@@ -26,7 +26,6 @@ const AvailableHours =  () => {
     })
     
   },[date])
-  // TODO loading...
 
     return (
       loading? <LoaderModal/>:
