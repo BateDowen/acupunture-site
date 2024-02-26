@@ -29,6 +29,13 @@ export const getDate = (req, res, next) => {
 export const createDate = (req, res, next) => {
   const reqDate = req.params.date;
   const newDate = new Hours({ date: reqDate, availableHours });
+  if (!req.body.token) {
+    const err = new Error('Съжаляваме, няма часове за тази дата.');
+    err.statusCode = 404;
+    next(res.json({err, message: err.message}))
+    throw err;
+
+  };
 
   return newDate
     .save()
