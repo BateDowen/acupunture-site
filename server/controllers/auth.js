@@ -9,6 +9,7 @@ export const login = (req,res,next) => {
         password
     } = req.body;
     let loadedUser
+    console.log(name);
     User.findOne({name})
     .then(user => {
         if (!user) {
@@ -32,12 +33,13 @@ export const login = (req,res,next) => {
         },process.env.SECRET,{
             expiresIn: '1h'
         });
-        res.status(200).json({token: token, userId:loadedUser._id.toString()})
+        res.status(200).json({token: token, userId:loadedUser._id.toString(), name:loadedUser.name})
     })
     .catch(err =>{
+        console.log(err);
         if (!err.statusCode) {
             err.statusCode = 500
         }
-        next(err.message);
+        next(res.json({ err, message: err.message }));
     });
 }

@@ -12,6 +12,7 @@ import AvailableHours from "./Pages/AvailableHours";
 import BookHour from "./Pages/BookHour";
 import { LoadingProvider } from "./components/Loader/LoadingCtx";
 import ErrorPage from "./Pages/ErrorPage";
+import Login from "./Pages/Login";
 
 const Layout = () => {
   return (
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/hours/:date/:hourKey/:hour",
         element: <BookHour />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "error",

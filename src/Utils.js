@@ -34,11 +34,14 @@ import * as api from './api.js'
   ];
 
   export const getDate = async (date) => {
-    return api.get(`hours/${date}`)
+    return api.get(`hours/${date}`);
   }
   export const createDate = async (date) => {
-    return api.post(`hours/${date}`)
+    return api.post(`hours/${date}`);
   };
   export const bookHour = async (email,name,phone,date,hour,hourKey) => {
-    return api.post(`hours/book`,{email,name,phone,date,hour,hourKey})
+    return api.post(`hours/book`,{email,name,phone,date,hour,hourKey});
+  };
+  export const login = async (name,password) => {
+    return api.post('auth/signIn',{name,password});
   };

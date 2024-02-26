@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import classes from '../App.module.css'
 
 
 const Footer = () => {
-
+const user = localStorage.getItem('user');
   return (
     <footer className={`bg-lightBlue pt-10 pb-10  text-white`}>
       <div className=' mx-auto w-[80%]'>
@@ -18,6 +19,9 @@ const Footer = () => {
               <li>Терапевтичен масаж</li>
               <li>Акупунктура</li>
               <li>Индивидуална рехабилитационна програма</li>
+              {!user ? <Link to={'login'}>
+                <li>Админ</li>
+              </Link> : ''}
             </ul>
           </div>
           <div className='flex flex-col mx-3 my-2'>
