@@ -15,14 +15,46 @@ const hoursSchema = new mongoose.Schema({
     type: String,
   },
   availableHours: {
-    first: { type: String },
-    second: { type: String },
-    third: { type: String },
-    fourth: { type: String },
-    fifth: { type: String },
-    sixth: { type: String },
-    seventh: { type: String },
-    eighth: { type: String },
+    first: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    second: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    third: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    fourth: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    fifth: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    sixth: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    seventh: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
+    eighth: {
+      hour: { type: String },
+      available: Boolean,
+      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+    },
   },
 });
 
