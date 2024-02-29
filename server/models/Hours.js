@@ -18,42 +18,42 @@ const hoursSchema = new mongoose.Schema({
     first: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     second: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     third: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     fourth: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     fifth: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     sixth: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     seventh: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
     eighth: {
       hour: { type: String },
       available: Boolean,
-      // clientId: { type: mongoose.SchemaType.ObjectId, ref: "BookingRecord" },
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
   },
 });
