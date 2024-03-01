@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classes from '../App.module.css'
+import Button from './Button/Button';
 
 
 const Footer = () => {
-const user = localStorage.getItem('user');
+  const user = localStorage.getItem('user');
+  const navigate = useNavigate();
+
   return (
     <footer className={`bg-lightBlue pt-10 pb-10  text-white`}>
       <div className=' mx-auto w-[80%]'>
@@ -21,7 +24,12 @@ const user = localStorage.getItem('user');
               <li>Индивидуална рехабилитационна програма</li>
               {!user ? <Link to={'login'}>
                 <li>Админ</li>
-              </Link> : ''}
+              </Link> : 
+              <div className='mt-4' onClick={() => 
+                {localStorage.removeItem('user')
+                navigate('/')
+                }}><Button bg={'btn-secondary'}>Излез</Button></div>
+              }
             </ul>
           </div>
           <div className='flex flex-col mx-3 my-2'>
