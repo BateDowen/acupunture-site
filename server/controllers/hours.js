@@ -2,14 +2,14 @@ import { BookingRecord } from "../models/BookingSchema.js";
 import { Hours } from "../models/Hours.js";
 
 let availableHours = {
-  first: {hour: "09:00 - 10:00", available: true, clientId: ''},
-  second: {hour:"10:00 - 11:00",available: true, clientId: ''},
-  third: {hour:"11:00 - 12:00",available: true, clientId: ''},
-  fourth: {hour:"12:00 - 13:00",available: true, clientId: ''},
-  fifth: {hour:"13:00 - 14:00",available: true, clientId: ''},
-  sixth: {hour:"14:00 - 15:00",available: true, clientId: ''},
-  seventh: {hour:"15:00 - 16:00",available: true, clientId: ''},
-  eighth: {hour:"16:00 - 17:00",available: true, clientId: ''},
+  first: {hour: "09:00 - 10:00", available: true, clientId: null},
+  second: {hour:"10:00 - 11:00",available: true, clientId: null},
+  third: {hour:"11:00 - 12:00",available: true, clientId: null},
+  fourth: {hour:"12:00 - 13:00",available: true, clientId: null},
+  fifth: {hour:"13:00 - 14:00",available: true, clientId: null},
+  sixth: {hour:"14:00 - 15:00",available: true, clientId: null},
+  seventh: {hour:"15:00 - 16:00",available: true, clientId: null},
+  eighth: {hour:"16:00 - 17:00",available: true, clientId: null},
 };
 export const getDate = (req, res, next) => {
   const reqDate = req.params.date;
@@ -18,11 +18,18 @@ export const getDate = (req, res, next) => {
     date: reqDate,
   })
     .then((result) => {
+      console.log(result);
+      if (!result) {
+        const err = new Error('Съжаляваме, няма часове за тази дата.');
+        err.statusCode = 404;
+        throw err;
+    
+      };
       res.status(200).json(result);
     })
     .catch((err) => {
       console.log({ err });
-      res.json(err);
+      res.json({err, message: err.message});
     });
 };
 
@@ -31,8 +38,8 @@ export const createDate = (req, res, next) => {
   const newDate = new Hours({ date: reqDate, availableHours });
   console.log(newDate);
   if (!req.body.token) {
-    const err = new Error('Съжаляваме, няма часове за тази дата.');
-    err.statusCode = 404;
+    const err = new Error('Not authorized!');
+    err.statusCode = 403;
     next(res.json({err, message: err.message}))
     throw err;
 
