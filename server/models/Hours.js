@@ -13,6 +13,7 @@ import mongoose from "mongoose";
 const hoursSchema = new mongoose.Schema({
   date: {
     type: String,
+    required: true,
   },
   availableHours: {
     first: {
