@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import  "./Nav.styles.css";
 import { useState } from "react";
+import Button from "../Button/Button";
 
 const Nav = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -26,12 +27,15 @@ const Nav = () => {
         <div className="hidden max-sm:block px-4">
           <img onClick={showNavHandler} src="../../public/hamburger.svg" alt="hamb" width={25} height={25} />
         </div>
-           <div onClick={showNavHandler} className={`${dinamicCss} small-screen-nav shadow-md h-full`}>
-            <div className={`${dinamicCss} small-screen-nav border-b-0 text-xl font-bold`}>
+           <div onClick={showNavHandler} className={`${dinamicCss} small-screen-nav shadow-md h-full bg-[#F5FCFC]`}>
+            <div className={`${dinamicCss} small-screen-nav border-b-0 text-xl font-bold bg-[#F5FCFC]`}>
              <NavLink to={"/"}className="hover:text-[#46a5aaf5]"> Начало</NavLink>
              <NavLink to={"/about"} className=" hover:text-[#46a5aaf5]" >  За мен</NavLink>
              <NavLink to={"/prices"} className=" hover:text-[#46a5aaf5]"> Цени</NavLink>
-             <NavLink to={"/contacts"} className="hover:text-[#46a5aaf5]" >  Контакти</NavLink>
+             <NavLink to={"/contacts"} className="hover:text-[rgba(70,165,170,0.96)]" >  Контакти</NavLink>
+             <NavLink to={'/appointments'}>
+              <Button bg="btn-primary">Запазете час</Button>
+             </NavLink>
             </div>
         </div>
       </section>
