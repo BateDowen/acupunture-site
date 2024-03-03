@@ -57,7 +57,10 @@ const Appointments = () => {
         }
       })
       .catch((err) => {
-        throw err;
+        console.log(err.message);
+        setErr(err.message);
+        setIsShown(true)
+        // throw err;
       });
   };
   const goBackHandler = () => {
