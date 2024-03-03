@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
-import classes from '../App.module.css'
-import Button from './Button/Button';
+import classes from '../../App.module.css'
+import Button from '../Button/Button';
 
 
 const Footer = () => {

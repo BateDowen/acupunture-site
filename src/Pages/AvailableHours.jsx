@@ -17,7 +17,6 @@ const AvailableHours = () => {
     showLoader();
     getDate(date)
       .then((result) => {
-        console.log(result);
         return [result ? Object.values(result.availableHours) : null, result];
       })
       .then((result) => {
@@ -41,14 +40,11 @@ const AvailableHours = () => {
         <div className="flex flex-col md:flex-row max-w-[650px] flex-wrap py-7 justify-around">
         
           {availableHours != null ? (
-            // TODO unavailbleHours red
-          
             availableHours.map((h, index) => {
-              console.log(h);
               return (
                 <Link
                   key={index}
-                  to={`/hours/${date}/${availableHoursKeys[index]}/${h.hour}`}
+                  to = {`${!h.available ? '#' : `/hours/${date}/${availableHoursKeys[index]}/${h.hour}`}`}
                 >
                   <div
                     className={`${h.available ? '' : unavailableCss} w-[300px] h-10 py-2 rounded-md bg-[#F5FCFC]

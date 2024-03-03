@@ -1,11 +1,11 @@
 import React from "react";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contacts from "./Pages/Contacts";
 import Home from "./Pages/Home";
-import Footer from "./components/Footer";
+import Footer from "./components/Nav/Footer";
 import Error from "./Pages/ErrorPage";
 import Appointments from "./Pages/Appointments";
 import AvailableHours from "./Pages/AvailableHours";

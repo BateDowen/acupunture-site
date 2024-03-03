@@ -23,25 +23,24 @@ const Appointments = () => {
   }
 
   const createHours = () => {
-    
     createDate(dateToCheck, JSON.parse(user))
     .then((result) => {
-      console.log(result);
-      if (result.err) {
-        setErr(result.message);
-        setIsShown(true);
-      }
-      return result
+        console.log(result);
+        if (result.err) {
+          setErr(result.message);
+          setIsShown(true);
+        }
+        return result
     })
     .then(result =>{
-      setErr("");
-      setIsShown(false);
-      console.log(result);
-      navigate(`/hours/${result.result.date}`);
-      
+        setErr("");
+        setIsShown(false);
+        console.log(result);
+        navigate(`/hours/${result.result.date}`);
+        
     })
     .catch((err) => {
-      throw err;
+        throw err;
     });
   }
   const dateTocheck = () => {
@@ -52,15 +51,10 @@ const Appointments = () => {
           setErr(result.message);
           setIsShown(true);
         } else {
-console.log(result);
           setErr("");
           setIsShown(false);
           navigate(`/hours/${result.date}`);
-          // return result
         }
-        })
-        .then(() => {
-
       })
       .catch((err) => {
         throw err;
@@ -101,10 +95,7 @@ console.log(result);
               />
             </div>
             <div className="my-8">
-              <div
-                //  to={`/hours/${dateToCheck}`}
-                onClick={user? createHours : dateTocheck}
-              >
+              <div onClick={user? createHours : dateTocheck}>
                 <Button bg={"btn-primary"}>{user ? 'Създай часове' : 'Виж свободни часове'}</Button>
               </div>
             </div>
