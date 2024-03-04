@@ -44,17 +44,24 @@ export const createDate = (req, res, next) => {
     throw err;
 
   };
-
-  return newDate
-    .save()
-    .then((result) => {
-      console.log({ result });
-      res.json({ result });
+  Hours.findOne({date: reqDate})
+  .then(date => {
+    if (date) {
+      const err = new Error('Тази дата вече съществува!');
+      err.statusCode = 401;
+      throw err;
+    };
+    return newDate
+      .save()
+      .then((result) => {
+        console.log({ result });
+        res.json({ result });
     })
-    .catch((err) => {
-      console.log({ err });
-      res.json(err);
-    });
+  })
+  .catch((err) => {
+    console.log({ err });
+    res.json({err, message: err.message});
+  });
 };
 
 
