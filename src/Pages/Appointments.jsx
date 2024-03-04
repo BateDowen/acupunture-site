@@ -29,18 +29,17 @@ const Appointments = () => {
         if (result.err) {
           setErr(result.message);
           setIsShown(true);
+        }else {
+          setErr("");
+          setIsShown(false);
+          console.log(result);
+          navigate(`/hours/${result.result.date}`);
+
         }
-        return result
-    })
-    .then(result =>{
-        setErr("");
-        setIsShown(false);
-        console.log(result);
-        navigate(`/hours/${result.result.date}`);
-        
     })
     .catch((err) => {
-        throw err;
+      setErr(err.message);
+      setIsShown(true)
     });
   }
   const dateTocheck = () => {

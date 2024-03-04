@@ -16,14 +16,16 @@ const Login = () => {
     let { name,password } = Object.fromEntries(formData);
     login(name,password)
     .then(user => {
+      console.log(user);
         if (user.err) {
             setResponse(user.message);
             
-        };
+        } else {
         console.log(user);
         localStorage.setItem('user',JSON.stringify(user));
         setResponse(null);
         navigate('/appointments')
+        }
         // e.target.reset()
     })
   };
