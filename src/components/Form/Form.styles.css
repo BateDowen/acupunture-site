@@ -5,7 +5,10 @@
     @apply h-[56px] w-[100%] pt-4 pl-1 outline-none border rounded-md border-gray-300
     focus:border-b-2 focus:border-b-lightBlue focus:ease-in-out duration-200 font-bold text-gray-700
 }
-
+.form-danger-input {
+    @apply h-[56px] w-[100%] pt-4 pl-1 outline-none border rounded-md border-gray-300
+    border-b-2 border-b-red-600 ease-in-out duration-200 font-bold text-gray-700
+}
 .animation-time {
     
     animation: fade-in linear forwards;
