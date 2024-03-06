@@ -19,7 +19,7 @@ const About = () => {
             Кратка история
           </h2>
           <div className="flex flex-row max-[948px]:flex-col justify-between">
-            <p className=" text-[#747272] leading-6 sm:leading-7 md:leading-10 sm:pr-24 lg:pr-[200px] pt-7">
+            <div className=" text-[#747272] leading-6 sm:leading-7 md:leading-10 sm:pr-24 lg:pr-[200px] pt-7">
               <p>
                 Работата ми е базирана в използването на няколко методики за
                 справяне с хронична болка, травми и различни състояния на тялото
@@ -27,7 +27,7 @@ const About = () => {
                 акупунктура ( иглотерапия) и вендузотерапия. Завършено
                 образовние и курсове:
               </p>
-              <p className="pl-4">
+              <div className="pl-4">
                 <ul className="list-disc">
                   <li>
                     Пеофесионален бакалвър – Медицински колеж Стара Загора
@@ -41,8 +41,8 @@ const About = () => {
                     London UK
                   </li>
                 </ul>
-              </p>
-            </p>
+              </div>
+            </div>
             <img
               src="../../../public/zlati.png"
               alt="zlati"

@@ -1,9 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import hourRouter from "./server/routes/hours.js";
+import hourRouter from "./routes/hours.js";
 import bodyParser from "body-parser";
-import authRouter from "./server/routes/auth.js";
+import authRouter from "./routes/auth.js";
 
 const app = express();
 const port = 3030;
@@ -36,7 +36,7 @@ mongoose.connection.on('connected', () => {
     console.log('Mongo connected');
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     connect()
     console.log(`Server is listening to ${port}...`)
 
