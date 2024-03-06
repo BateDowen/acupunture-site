@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import authRouter from "./routes/auth.js";
 
 const app = express();
-const port = 3030;
+const port = process.env.PORT || 3030;
 dotenv.config();
 app.use(bodyParser.json())
 
