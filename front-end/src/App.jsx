@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Nav from "./components/Nav/Nav";
-import { BrowserRouter, Outlet, RouterProvider, ScrollRestoration, createBrowserRouter, useLocation, useNavigate, useRoutes } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter, useLocation, } from "react-router-dom";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contacts from "./Pages/Contacts";
