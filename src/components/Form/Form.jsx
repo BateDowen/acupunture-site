@@ -58,13 +58,6 @@ const Form = (props) => {
                  className={`${phoneError ? 'form-danger-input' :'form-primary-input' }`} />
             </div>
         </div>
-        <div>
-        <div className='relative w-[100%] flex flex-col text-slate-500 px-1'>
-            <label htmlFor="message" className=' absolute top-1 left-[9px] text-sm'>Кратко съобщение</label>
-            <textarea id='name' name='message' type="text" placeholder='Съдържание'
-             className='form-primary-input mt-1' />
-        </div>
-        </div>
         <div className='mt-5'>
           <Button bg={'btn-primary'} >{props.bntText}</Button>
         </div>

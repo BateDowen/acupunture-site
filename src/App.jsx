@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "./components/Nav/Nav";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Outlet, RouterProvider, ScrollRestoration, createBrowserRouter, useLocation, useNavigate, useRoutes } from "react-router-dom";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contacts from "./Pages/Contacts";
@@ -14,7 +14,15 @@ import { LoadingProvider } from "./components/Loader/LoadingCtx";
 import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 
+
 const Layout = () => {
+  const navigate = useLocation();
+
+  useEffect(() => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    
+  }, [navigate]);
+
   return (
     <>
       <Nav />
@@ -23,6 +31,7 @@ const Layout = () => {
     </>
   );
 };
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -69,12 +78,14 @@ const router = createBrowserRouter([
   },
 ]);
 const App = () => {
+ 
   return (
     <div>
       <div>
-        <LoadingProvider>
-          <RouterProvider router={router} />
-        </LoadingProvider>
+          <LoadingProvider>
+            <RouterProvider router={router} >
+            </RouterProvider>
+          </LoadingProvider>
       </div>
     </div>
   );
