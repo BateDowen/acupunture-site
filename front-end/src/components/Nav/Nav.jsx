@@ -25,7 +25,7 @@ const Nav = () => {
           <NavLink to={"/contacts"} className="hover:text-darkwood" >  Контакти</NavLink>
         </div>
         <div className="hidden max-sm:block px-4">
-          <img onClick={showNavHandler} src="../../public/hamburger.svg" alt="hamb" width={25} height={25} />
+          <img onClick={showNavHandler} src="../../hamburger.svg" alt="hamb" width={25} height={25} />
         </div>
            <div onClick={showNavHandler} className={`${dinamicCss} small-screen-nav shadow-md h-full bg-lightwood`}>
             <div className={`${dinamicCss} small-screen-nav border-b-0 text-xl font-bold bg-lightwood`}>

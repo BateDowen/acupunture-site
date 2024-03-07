@@ -44,7 +44,7 @@ const About = () => {
               </div>
             </div>
             <img
-              src="../../../public/zlati.png"
+              src="../../zlati.png"
               alt="zlati"
               className="h-[300px] w-[250px] sm:h-[350px]"
             />

@@ -6,6 +6,8 @@ import { useState } from "react";
 import Button from "../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { createDate, getDate } from "../Utils";
+import { useLoading } from "../components/Loader/LoadingCtx";
+import LoaderModal from "../components/Loader/LoaderModal";
 
 const Appointments = () => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
@@ -14,6 +16,8 @@ const Appointments = () => {
   const user = localStorage.getItem("user");
   const [err, setErr] = useState('');
   const [isShown, setIsShown] = useState(false);
+  const { loading, showLoader, hideLoader } = useLoading();
+
   const navigate = useNavigate();
 
   let dateToCheck;
@@ -26,15 +30,17 @@ const Appointments = () => {
     createDate(dateToCheck, JSON.parse(user))
     .then((result) => {
         console.log(result);
+        showLoader()
         if (result.err) {
           setErr(result.message);
           setIsShown(true);
+          hideLoader()
         }else {
           setErr("");
           setIsShown(false);
           console.log(result);
           navigate(`/hours/${result.result.date}`);
-
+          hideLoader()
         }
     })
     .catch((err) => {
@@ -46,13 +52,17 @@ const Appointments = () => {
     getDate(dateToCheck)
       .then(result =>{
         console.log(result);
+        showLoader()
         if (result.err) {
           setErr(result.message);
           setIsShown(true);
+          hideLoader()
         } else {
           setErr("");
           setIsShown(false);
           navigate(`/hours/${result.date}`);
+          hideLoader()
+
         }
       })
       .catch((err) => {
@@ -71,7 +81,9 @@ const Appointments = () => {
     return day === 0 || day === 6; // Sunday (0) or Saturday (6)
   };
   return (
+    loading ? <LoaderModal /> :
     <div className="bg-lightgray relative pt-[100px] w-full mb-0 mx-auto text-center">
+
       {isShown ? (
         <div className="mt-[120px] h-[300px]">
           <p>{err}</p>

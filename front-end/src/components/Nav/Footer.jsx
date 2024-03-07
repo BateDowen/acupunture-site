@@ -12,7 +12,7 @@ const Footer = () => {
       <div className=' mx-auto w-[80%]'>
         <div className=' flex flex-col sm:flex-row mb-4 justify-between'>
           <div className=' sm:ml-0'>
-            <img src="../../public/logo.webp" alt="logo" height={80} width={80} className='rounded-full'/>
+            <img src="../../logo.webp" alt="logo" height={80} width={80} className='rounded-full'/>
           </div>
           <div className='flex flex-col mx-3 my-2'>
             <div className=''>
