@@ -1,6 +1,6 @@
 .btn-primary {
-    @apply bg-[#48b6bb] hover:bg-hoverBlue
+    @apply bg-wood hover:bg-darkwood
 }
 .btn-secondary{
-    @apply bg-hoverBlue hover:bg-[#153839]
+    @apply bg-darkwood hover:bg-black
 }

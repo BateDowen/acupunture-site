@@ -4,7 +4,7 @@ import BlogCard from "../components/Card/BlogCard";
 import Form from "../components/Form/Form";
 
 const Home = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-3";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
   return (
     <div className="text-center relative pt-[100px] w-full">
       <section
@@ -21,7 +21,7 @@ const Home = () => {
 
         </NavLink>
       </div>
-      <div className=" pt-12 pb-12 w-full ">
+      <div className=" pt-12 pb-12 w-full bg-lightgray ">
         <div className="flex flex-row justify-center max-[640px]:flex-col items-center px-12">
           <div className="flex flex-col text-left mx-4">
             <h2 className={`uppercase ${titleCss}`}>За мен</h2>
@@ -44,8 +44,8 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className=" mt-6 mx-auto py-5 bg-lightBlue">
-        <h3 className="text-[#FFFFFF] basis-full font-medium text-3xl uppercase mb-10">
+      <div className=" mx-auto py-5 bg-wood">
+        <h3 className="text-black basis-full font-medium text-3xl uppercase mb-10">
           Последни публикации
         </h3>
         <div className="flex flex-row flex-wrap justify-start px-12">
@@ -58,7 +58,7 @@ const Home = () => {
           <Button bg="btn-secondary">Виж всички</Button>
         </div>
       </div>
-      <div className="mx-auto py-5 bg-[#F5FCFC] ">
+      <div className="mx-auto py-5 bg-lightgray ">
         <h3 className={`uppercase ${titleCss} py-6`}>Пишете ни</h3>
         <Form />
       </div>

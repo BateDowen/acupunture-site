@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { createDate, getDate } from "../Utils";
 
 const Appointments = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-3";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
 
   const [date, setDate] = useState(null);
   const user = localStorage.getItem("user");
@@ -71,7 +71,7 @@ const Appointments = () => {
     return day === 0 || day === 6; // Sunday (0) or Saturday (6)
   };
   return (
-    <div className="bg-[#F5FCFC] relative pt-[100px] w-full mb-0 mx-auto text-center">
+    <div className="bg-lightgray relative pt-[100px] w-full mb-0 mx-auto text-center">
       {isShown ? (
         <div className="mt-[120px] h-[300px]">
           <p>{err}</p>
@@ -87,9 +87,9 @@ const Appointments = () => {
             </div>
           </section>
           <div className="flex flex-col justify-center mx-auto">
-            <div>
+            <div className="">
               <Calendar
-                className="shadow-md"
+                className="bg-white p-3 rounded-md shadow-md "
                 onChange={(item) => setDate(item)}
                 date={date}
                 minDate={new Date()}

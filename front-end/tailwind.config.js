@@ -32,6 +32,11 @@ export default {
     colors: {
       'lightBlue' : '#48b6bb',
       'hoverBlue' : '#2A6466',
+      'wood' : '#D3B180',
+      'black' : '#1f1e1e',
+      'darkwood': '#774A41',
+      'lightwood': '#eedabf',
+      'lightgray' : '#F7F7F7'
     }
     },
   },

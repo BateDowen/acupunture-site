@@ -1,4 +1,4 @@
-const host = 'http://192.168.0.107:3030/' ;
+const host = 'https://acupunktura.onrender.com/' ;
 
 const request = async (method,url, data) => {
     const options = {

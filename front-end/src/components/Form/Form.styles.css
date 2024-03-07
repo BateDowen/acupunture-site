@@ -1,9 +1,9 @@
 .form-primary {
-    @apply flex flex-col rounded-2xl bg-white w-[50%] max-md:w-[80%] p-8 mx-auto font-light shadow-customGray
+    @apply flex flex-col rounded-2xl bg-lightgray w-[50%] max-md:w-[80%] p-8 mx-auto font-light shadow-customGray
 }
 .form-primary-input {
     @apply h-[56px] w-[100%] pt-4 pl-1 outline-none border rounded-md border-gray-300
-    focus:border-b-2 focus:border-b-lightBlue focus:ease-in-out duration-200 font-bold text-gray-700
+    focus:border-b-2 focus:border-b-darkwood focus:ease-in-out duration-200 font-bold text-gray-700
 }
 .form-danger-input {
     @apply h-[56px] w-[100%] pt-4 pl-1 outline-none border rounded-md border-gray-300

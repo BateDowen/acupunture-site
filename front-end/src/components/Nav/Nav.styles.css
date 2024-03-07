@@ -3,6 +3,6 @@
 }
 
 .small-screen-nav{
-    @apply  fixed w-[70%] h-[50%]  bg-white text-center text-hoverBlue text-xl border border-slate-200  justify-between py-10 right-0 top-[160px] flex flex-col ;
+    @apply  fixed w-[70%] h-[50%]  bg-wood text-center text-darkwood text-xl border border-slate-200  justify-between py-10 right-0 top-[160px] flex flex-col ;
     
 }

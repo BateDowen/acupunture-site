@@ -6,7 +6,7 @@ import { login } from '../Utils';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-6";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-6";
   const [visable,setVisable ] = useState(false);
   const [response, setResponse] = useState(null);
   const navigate = useNavigate()
@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     // TODO loading, try redux
-    <div className=" bg-white relative pt-[100px] w-full mx-auto text-center">
+    <div className=" bg-lightgray relative pt-[100px] w-full mx-auto text-center">
       <section className="flex flex-row w-full justify-around mt-[120px] ">
         <div className={` flex flex-col w-full mb-[30px] mx-12`}>
           <h2 className={`w-full uppercase ${titleCss} `}>Влез</h2>

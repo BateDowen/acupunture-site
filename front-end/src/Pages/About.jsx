@@ -1,5 +1,5 @@
 const About = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-3";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
 
   return (
     <div className="text-center bg-white relative pt-[100px] w-full mx-auto">
@@ -8,18 +8,18 @@ const About = () => {
           <h2 className={`w-full uppercase ${titleCss}`}>
             Здравейте. Аз съм Златомир.
           </h2>
-          <h3 className="text-hoverBlue text-xl sm:text-2xl font-bold mt-3">
+          <h3 className="text-black text-xl sm:text-2xl font-bold mt-3">
             Рехабилитатор. Масажен терапевт.
           </h3>
         </div>
       </section>
-      <div className=" bg-[#F5FCFC] py-10 ">
+      <div className=" bg-lightgray py-10 ">
         <div className="mx-20 text-left">
-          <h2 className="text-hoverBlue text-xl sm:text-2xl font-bold mb-6">
+          <h2 className="text-black text-xl sm:text-2xl font-bold mb-6">
             Кратка история
           </h2>
           <div className="flex flex-row max-[948px]:flex-col justify-between">
-            <div className=" text-[#747272] leading-6 sm:leading-7 md:leading-10 sm:pr-24 lg:pr-[200px] pt-7">
+            <div className=" text-black leading-6 sm:leading-7 md:leading-10 sm:pr-24 lg:pr-[200px] pt-7">
               <p>
                 Работата ми е базирана в използването на няколко методики за
                 справяне с хронична болка, травми и различни състояния на тялото
@@ -51,7 +51,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      //TODO: Certificates and pictures
+      
     </div>
   );
 };

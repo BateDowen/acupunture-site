@@ -1,5 +1,5 @@
 const Contacts = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-3";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
 
   return (
     <div className=" bg-white relative pt-[100px] w-full mx-auto text-left">
@@ -8,7 +8,7 @@ const Contacts = () => {
           <h2 className={`w-full uppercase ${titleCss} `}>Контакти</h2>
         </div>
       </section>
-      <div className=" mt-6 mx-auto p-10 bg-[#F5FCFC] flex flex-col md:flex-row justify-between">
+      <div className=" mt-6 mx-auto p-10 bg-lightgray flex flex-col md:flex-row justify-between">
         <div className="flex flex-col">
           <div className="flex flex-col mx-3 my-2">
             <div className="">

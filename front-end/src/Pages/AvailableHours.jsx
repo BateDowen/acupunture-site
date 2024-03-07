@@ -6,7 +6,7 @@ import { useLoading } from "../components/Loader/LoadingCtx";
 import LoaderModal from "../components/Loader/LoaderModal";
 
 const AvailableHours = () => {
-  const titleCss = "text-hoverBlue text-2xl sm:text-3xl font-bold mb-6";
+  const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-6";
   const unavailableCss = "cursor-not-allowed opacity-50 bg-red";
   const [availableHours, setAvailableHours] = useState(null);
   const [availableHoursKeys, setAvailableHoursKeys] = useState(null);
@@ -30,13 +30,13 @@ const AvailableHours = () => {
   return loading ? (
     <LoaderModal />
   ) : (
-    <div className="bg-[#F5FCFC] relative pt-[100px] w-full mb-0 mx-auto text-center">
+    <div className="bg-lightgray relative pt-[100px] w-full mb-0 mx-auto text-center">
       <section className="flex flex-row w-full justify-around mt-[120px] ">
         <div className={` flex flex-col w-full mx-12`}>
           <h2 className={`w-full uppercase ${titleCss} `}>Свободни часове</h2>
         </div>
       </section>
-      <div className="text-center flex justify-center h-[600px] bg-hoverBlue">
+      <div className="text-center flex justify-center h-[600px] bg-darkwood">
         <div className="flex flex-col md:flex-row max-w-[650px] flex-wrap py-7 justify-around">
         
           {availableHours != null ? (
@@ -47,9 +47,9 @@ const AvailableHours = () => {
                   to = {`${!h.available ? '#' : `/hours/${date}/${availableHoursKeys[index]}/${h.hour}`}`}
                 >
                   <div
-                    className={`${h.available ? '' : unavailableCss} w-[300px] h-10 py-2 rounded-md bg-[#F5FCFC]
-                      font-bold text-hoverBlue hover:text-[#ffffff]
-                      hover:bg-lightBlue transition-all ease-linear shadow-customGray`}
+                    className={`${h.available ? '' : unavailableCss} w-[300px] h-10 py-2 rounded-md bg-lightgray
+                      font-bold text-darkwood
+                      hover:bg-lightwood transition-all ease-linear shadow-customGray`}
                   >
                     {h.hour}
                   </div>
@@ -66,7 +66,7 @@ const AvailableHours = () => {
           )}
         </div>
       </div>
-      <div className="bg-hoverBlue w-full pb-5">
+      <div className="bg-darkwood w-full pb-5">
         <Link to={"/appointments"}>
           <Button bg={"btn-primary"}>Назад</Button>
         </Link>
