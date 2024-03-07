@@ -9,7 +9,7 @@ const Home = () => {
     <div className="text-center relative pt-[100px] w-full">
       <section
         className="flex flex-col w-full h-[300px] sm:h-[400px]
-          bg-[url('../../../public/topSectionImage.jpg')]
+          bg-[url('../../public/topSectionImage.jpg')]
           opacity-50 bg-cover bg-center
            "
       ></section>
