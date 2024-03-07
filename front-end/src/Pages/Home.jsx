@@ -38,7 +38,7 @@ const Home = () => {
             </div>
           </div>
           <img
-            src="'../../../public/massage.jpg"
+            src="'../../public/massage.jpg"
             alt="massage"
             className="mx-4 py-2 rounded-3xl w-[350px] lg:h-[280px] sm:h-[320px]"
           />
@@ -49,10 +49,10 @@ const Home = () => {
           Последни публикации
         </h3>
         <div className="flex flex-row flex-wrap justify-start px-12">
-          <BlogCard href={""} src={"../../../public/massage.jpg"} />
-          <BlogCard href={""} src={"../../../public/massage.jpg"} />
-          <BlogCard href={""} src={"../../../public/massage.jpg"} />
-          <BlogCard href={""} src={"../../../public/massage.jpg"} />
+          <BlogCard href={""} src={"../../public/massage.jpg"} />
+          <BlogCard href={""} src={"../../public/massage.jpg"} />
+          <BlogCard href={""} src={"../../public/massage.jpg"} />
+          <BlogCard href={""} src={"../../public/massage.jpg"} />
         </div>
         <div className="my-2">
           <Button bg="btn-secondary">Виж всички</Button>
