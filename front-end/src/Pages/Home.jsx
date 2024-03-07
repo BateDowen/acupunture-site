@@ -38,7 +38,7 @@ const Home = () => {
             </div>
           </div>
           <img
-            src="'../public/massage.jpg"
+            src="../public/massage.jpg"
             alt="massage"
             className="mx-4 py-2 rounded-3xl w-[350px] lg:h-[280px] sm:h-[320px]"
           />
