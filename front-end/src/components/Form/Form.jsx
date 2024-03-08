@@ -58,8 +58,12 @@ const Form = (props) => {
                  className={`${phoneError ? 'form-danger-input' :'form-primary-input' }`} />
             </div>
         </div>
+       { props.message ?
+        <div className='relative w-[100%] flex flex-col text-slate-500 px-1'>
+          <textarea type='text' className='form-primary-input'></textarea>
+        </div> : '' }
         <div className='mt-5'>
-          <Button bg={'btn-primary'} >{props.bntText}</Button>
+          <Button bg={'btn-primary'} >{props.btnText}</Button>
         </div>
       </form>
     </div>

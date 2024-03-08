@@ -27,10 +27,10 @@ const Appointments = () => {
   }
 
   const createHours = () => {
+    showLoader()
     createDate(dateToCheck, JSON.parse(user))
     .then((result) => {
         console.log(result);
-        showLoader()
         if (result.err) {
           setErr(result.message);
           setIsShown(true);
@@ -49,10 +49,10 @@ const Appointments = () => {
     });
   }
   const dateTocheck = () => {
+    showLoader()
     getDate(dateToCheck)
       .then(result =>{
         console.log(result);
-        showLoader()
         if (result.err) {
           setErr(result.message);
           setIsShown(true);

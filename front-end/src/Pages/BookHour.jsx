@@ -47,7 +47,7 @@ const BookHour = () => {
           </div>
           {responce == null ? (
             <>
-              <Form onSubmit={onSubmit} bntText="Запази" />
+              <Form onSubmit={onSubmit} btnText="Запази" />
             </>
           ) : (
             <p className="text-white">{responce}</p>

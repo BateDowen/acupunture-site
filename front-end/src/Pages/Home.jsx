@@ -60,7 +60,7 @@ const Home = () => {
       </div>
       <div className="mx-auto py-5 bg-lightgray ">
         <h3 className={`uppercase ${titleCss} py-6`}>Пишете ни</h3>
-        <Form />
+        <Form btnText='Изпрати' message={true} />
       </div>
     </div>
   );
