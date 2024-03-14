@@ -1,5 +1,6 @@
 import { BookingRecord } from "../models/BookingSchema.js";
 import { Hours } from "../models/Hours.js";
+import { sendEmail } from "../sendEmail/sendEmail.js";
 
 let availableHours = {
   first: {hour: "09:00 - 10:00", available: true, clientId: null},
@@ -93,6 +94,7 @@ console.log(hourKey);
       console.log(result);
       hour.availableHours[hourKey].available = false;
       hour.availableHours[hourKey].clientId = result._id;
+      sendEmail(`Име: ${req.body.name}, Тел: ${req.body.phone}`)
       
       return hour.save()
     })

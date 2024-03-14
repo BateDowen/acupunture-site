@@ -5,9 +5,9 @@ import hourRouter from "./routes/hours.js";
 import bodyParser from "body-parser";
 import authRouter from "./routes/auth.js";
 
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 3030;
-dotenv.config();
 app.use(bodyParser.json())
 
 app.use((req,res,next) => {
