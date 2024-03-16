@@ -70,7 +70,6 @@ export const createDate = (req, res, next) => {
 export const bookHour = (req, res, next) => {
   const date = req.body.date;
   const hourKey = req.body.hourKey;
-console.log(hourKey);
   Hours.findOne({ date: date })
   .then((hour) => {
     console.log(hour.availableHours[hourKey]);
