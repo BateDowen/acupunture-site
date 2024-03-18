@@ -19,10 +19,11 @@ const Nav = () => {
           </NavLink>
         </div>
         <div className={`nav-primary `}>
-          <NavLink to={"/"}className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Начало</NavLink>
-          <NavLink to={"/about"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  За мен</NavLink>
-          <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Цени</NavLink>
-          <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}>  Контакти</NavLink>
+          <NavLink to={"/"}className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Начало</NavLink>
+          <NavLink to={"/about"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  За мен</NavLink>
+          <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Цени</NavLink>
+          <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}>  Контакти</NavLink>
+          <NavLink to={'/appointments'} className=' ml-3'><Button bg="btn-primary">Запазете час</Button></NavLink>
         </div>
         <div className="hidden max-sm:block px-4">
           <img onClick={showNavHandler} src="../../hamburger.svg" alt="hamb" width={25} height={25} />

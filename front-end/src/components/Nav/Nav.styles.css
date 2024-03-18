@@ -1,8 +1,14 @@
 .nav-primary {
-    @apply flex justify-between text-[#747272] min-w-[60%] pr-10 max-sm:hidden
+    @apply flex justify-between text-[#747272] min-w-[70%] pr-10 max-sm:hidden
 }
 
 .small-screen-nav{
     @apply  fixed w-[70%] h-[50%]  bg-wood text-center text-darkwood text-xl border border-slate-200  justify-between py-10 right-0 top-[160px] flex flex-col ;
     
+}
+.nav-link-active {
+    @apply underline pt-2 text-darkwood
+}
+.nav-link-not-active {
+    @apply pt-2 hover:text-darkwood
 }

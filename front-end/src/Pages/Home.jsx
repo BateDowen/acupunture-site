@@ -16,10 +16,7 @@ const Home = () => {
       <div className="text-center  w-full absolute top-[8%] sm:top-[10%] md:top-[13%]">
         <h1 className={`uppercase  ${titleCss}`}>Студио за рехабилитация</h1>
         <p className=" text-[20px]  text-[#414141] mb-3">Масажен терапевт</p>
-        <NavLink to={'/appointments'}>
-          <Button bg="btn-primary">Запазете час</Button>
-
-        </NavLink>
+       
       </div>
       <div className=" pt-12 pb-12 w-full bg-lightgray ">
         <div className="flex flex-row justify-center max-[640px]:flex-col items-center px-12">
