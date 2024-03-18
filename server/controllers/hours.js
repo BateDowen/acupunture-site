@@ -65,7 +65,28 @@ export const createDate = (req, res, next) => {
   });
 };
 
-
+export const deleteAppointment = (req,res,next) => {
+  const date = req.body.date;
+  const hourKey = req.body.hourKey;
+  if (!req.body.token) {
+    const err = new Error('Not authorized!');
+    err.statusCode = 403;
+    next(res.json({err, message: err.message}))
+    throw err;
+  }
+  Hours.findOne({date: date})
+  .then(hour => {
+    hour.availableHours[hourKey].available = true;
+    hour.availableHours[hourKey].clientId = null;
+    
+    sendEmail(`${req.body.hour} е свободен`)
+    return hour.save()
+  })
+  .catch(err => {
+    console.log({ err });
+    res.json({err, message: err.message});
+  })
+};
 
 export const bookHour = (req, res, next) => {
   const date = req.body.date;
