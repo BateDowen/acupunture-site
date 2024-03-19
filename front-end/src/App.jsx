@@ -13,6 +13,7 @@ import BookHour from "./Pages/BookHour";
 import { LoadingProvider } from "./components/Loader/LoadingCtx";
 import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
+import Admin from "./Pages/Admin";
 
 
 const Layout = () => {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/admin/:date",
+        element: <Admin />,
       },
       {
         path: "error",

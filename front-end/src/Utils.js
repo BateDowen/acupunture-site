@@ -45,3 +45,6 @@ import * as api from './api.js'
   export const login = async (name,password) => {
     return api.post('auth/signIn',{name,password});
   };
+  export const deleteAppointmentHour = async (date,hourKey,hour,user) => {
+    return api.post(`hours/delete/${date}`,{date,hourKey,hour,user})
+  }

@@ -72,6 +72,30 @@ const Appointments = () => {
         // throw err;
       });
   };
+  const adminDateToCheck = () => {
+    showLoader()
+    getDate(dateToCheck)
+      .then(result =>{
+        console.log(result);
+        if (result.err) {
+          setErr(result.message);
+          setIsShown(true);
+          hideLoader()
+        } else {
+          setErr("");
+          setIsShown(false);
+          navigate(`/admin/${result.date}`);
+          hideLoader()
+
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setErr(err.message);
+        setIsShown(true)
+        // throw err;
+      });
+  }
   const goBackHandler = () => {
     setErr("");
     setIsShown(false);
@@ -108,10 +132,14 @@ const Appointments = () => {
                 disabledDay={date => isWeekend(date)}
               />
             </div>
-            <div className="my-8">
-              <div onClick={user? createHours : dateTocheck}>
+            <div className="my-8 flex justify-center">
+              <div className="m-2" onClick={user? createHours : dateTocheck}>
                 <Button bg={"btn-primary"}>{user ? 'Създай часове' : 'Виж свободни часове'}</Button>
               </div>
+              {user ?
+              <div className="m-2" onClick={adminDateToCheck}>
+               <Button bg={"btn-primary"}>Виж заети часове</Button>
+              </div> : null}
             </div>
           </div>
         </>

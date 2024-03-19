@@ -7,6 +7,7 @@ import { useLoading } from "../components/Loader/LoadingCtx";
 import LoaderModal from "../components/Loader/LoaderModal";
 
 const BookHour = () => {
+  const user = localStorage.getItem("user");
   const { date, hour, hourKey } = useParams();
   const { loading, showLoader, hideLoader } = useLoading();
   const [responce, setResponce] = useState(null);
@@ -53,7 +54,7 @@ const BookHour = () => {
             <p className="text-white">{responce}</p>
           )}
           <div className="my-8">
-            <Link to={`/hours/${date}`}>
+            <Link to={user ? `/admin/${date}`: `/hours/${date}`}>
               <Button bg={"btn-primary"}>Назад</Button>
             </Link>
           </div>
