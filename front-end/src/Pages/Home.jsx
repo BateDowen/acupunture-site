@@ -14,8 +14,8 @@ const Home = () => {
            "
       ></section>
       <div className="text-center  w-full absolute top-[8%] sm:top-[10%] md:top-[13%]">
-        <h1 className={`uppercase  ${titleCss}`}>Студио за рехабилитация</h1>
-        <p className=" text-[20px]  text-[#414141] mb-3">Масажен терапевт</p>
+        <h1 className={`uppercase  ${titleCss}`}>Златомир Трифонов</h1>
+        <p className=" text-[20px]  text-[#414141] mb-3">Рехабилитация и акупунктура</p>
        
       </div>
       <div className=" pt-12 pb-12 w-full bg-lightgray ">

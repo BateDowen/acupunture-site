@@ -32,9 +32,15 @@ const Prices = () => {
           </div>
           <div className="bg-lightgray m-2 p-5 sm:p-7 rounded-md w-full sm:w-[33.3%] h-full">
             <div className="sm:mt-5">
-              <p className="text-center text-black text-lg">Акупунктура </p>
+              <p className="text-center text-black text-lg">Акупунктура - Първична сесия</p>
               <p className="text-center text-base text-[#747272]">
-                60лв/(50 мин)
+                60лв
+              </p>
+            </div>
+            <div className="sm:mt-5">
+              <p className="text-center text-black text-lg">Акупунктура - Терапия в серия</p>
+              <p className="text-center text-base text-[#747272]">
+                50лв
               </p>
             </div>
           </div>
