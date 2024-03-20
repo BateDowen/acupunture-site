@@ -83,7 +83,6 @@ export const deleteAppointment = (req,res,next) => {
     return hour.save()
   })
   .then((result) => {
-    console.log(result);
     res.status(201).json({ message: "Часът е отменен." });
   })
   .catch(err => {
@@ -97,7 +96,6 @@ export const bookHour = (req, res, next) => {
   const hourKey = req.body.hourKey;
   Hours.findOne({ date: date })
   .then((hour) => {
-    console.log(hour.availableHours[hourKey]);
     if (!hour.availableHours[hourKey].available) {
       const error = new Error("Съжаляваме, този час не е свободен!");
       error.statusCode = 404;
@@ -115,7 +113,6 @@ export const bookHour = (req, res, next) => {
     return booking
     .save()
     .then(result => {
-      console.log(result);
       hour.availableHours[hourKey].available = false;
       hour.availableHours[hourKey].clientId = result._id;
       sendEmail(`Име: ${req.body.name}, Тел: ${req.body.phone}, Час: ${req.body.hour}`)
@@ -123,7 +120,6 @@ export const bookHour = (req, res, next) => {
       return hour.save()
     })
     .then((result) => {
-        console.log(result);
         res.status(201).json({ message: "Часът е записан!" });
       })
     })

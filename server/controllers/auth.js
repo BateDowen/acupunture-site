@@ -33,7 +33,8 @@ export const login = (req,res,next) => {
         },process.env.SECRET,{
             expiresIn: '1h'
         });
-        res.status(200).json({token: token, userId:loadedUser._id.toString(), name:loadedUser.name})
+        console.log(loadedUser);
+        res.status(200).json({token: token, userId:loadedUser._id.toString(), name:loadedUser.name, role:loadedUser.role})
     })
     .catch(err =>{
         console.log(err);
