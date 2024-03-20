@@ -14,6 +14,7 @@ import { LoadingProvider } from "./components/Loader/LoadingCtx";
 import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
+import Blog from "./Pages/Blog";
 
 
 const Layout = () => {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/contacts",
         element: <Contacts />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/appointments",

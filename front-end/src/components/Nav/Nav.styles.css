@@ -1,5 +1,5 @@
 .nav-primary {
-    @apply flex justify-between text-[#747272] min-w-[70%] pr-10 max-sm:hidden
+    @apply flex justify-between text-[#747272] min-w-[70%] pr-10 max-md:hidden
 }
 
 .small-screen-nav{
