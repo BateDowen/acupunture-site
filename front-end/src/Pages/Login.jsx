@@ -4,16 +4,22 @@ import '../components/Form/Form.styles.css';
 import Button from '../components/Button/Button';
 import { login } from '../Utils';
 import { useNavigate } from 'react-router-dom';
+import { useLoading } from '../components/Loader/LoadingCtx';
+import LoaderModal from "../components/Loader/LoaderModal";
+
 
 const Login = () => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-6";
   const [visable,setVisable ] = useState(false);
   const [response, setResponse] = useState(null);
+  const { loading, showLoader, hideLoader } = useLoading();
+
   const navigate = useNavigate()
   const onSubmit = (e) => {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let { name,password } = Object.fromEntries(formData);
+    showLoader()
     login(name,password)
     .then(user => {
       console.log(user);
@@ -26,11 +32,14 @@ const Login = () => {
         setResponse(null);
         navigate('/appointments')
         }
+        hideLoader()
         // e.target.reset()
     })
   };
 
-  return (
+  return loading ? (
+    <LoaderModal /> )
+     : (
     // TODO loading, try redux
     <div className=" bg-lightgray relative pt-[100px] w-full mx-auto text-center">
       <section className="flex flex-row w-full justify-around mt-[120px] ">
