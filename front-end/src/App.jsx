@@ -15,6 +15,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
 import Blog from "./Pages/Blog";
+import CreatePost from "./Pages/CreatePost";
 
 
 const Layout = () => {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/create-post",
+        element: <CreatePost />,
       },
       {
         path: "/appointments",

@@ -8,7 +8,7 @@ const request = async (method,url, data) => {
     };
 
     if (data != undefined) {
-        options.headers['Content-type'] = 'application/json';
+        options.headers['Content-type'] = 'application/json' ;
         options.body = JSON.stringify(data);
 
     };

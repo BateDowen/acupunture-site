@@ -47,4 +47,10 @@ import * as api from './api.js'
   };
   export const deleteAppointmentHour = async (date,hourKey,hour,user) => {
     return api.post(`hours/delete/${date}`,{date,hourKey,hour,user})
-  }
+  };
+  export const createPost = (formData) => {
+   return fetch('http://localhost:3030/posts/create-post',{
+            method: 'POST',
+            body: formData
+          });
+  };
