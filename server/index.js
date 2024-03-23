@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import authRouter from "./routes/auth.js";
 import postRouter from "./routes/posts.js";
 import multer from "multer";
+import path from 'path';
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -20,6 +21,8 @@ const storage = multer.diskStorage({
   const app = express();
   const port = process.env.PORT || 3030;
   app.use(bodyParser.json())
+  console.log(process.cwd());
+  app.use('/uploads',express.static(path.join(process.cwd(), 'uploads')));
   app.use(express.urlencoded({ extended: true }));
   app.use(multer({storage: storage}).single('file'));
   app.use((req,res,next) => {
@@ -29,10 +32,6 @@ const storage = multer.diskStorage({
       next()
     });
     
-// app.post('/posts/create-post',upload.single('file'), (req,res,next) => {
-//     console.log(req.body);
-// })
-
 app.use('/hours', hourRouter);
 app.use('/auth',authRouter);
 app.use('/posts', postRouter);

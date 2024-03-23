@@ -54,3 +54,10 @@ import * as api from './api.js'
             body: formData
           });
   };
+  export const getPosts = (page) =>{
+    return api.get(`posts?page=${page}`)
+  };
+  export const getPost = (id) =>{
+    return api.get(`posts/${id}`)
+  };
+
