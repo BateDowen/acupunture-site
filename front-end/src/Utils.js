@@ -60,4 +60,9 @@ import * as api from './api.js'
   export const getPost = (id) =>{
     return api.get(`posts/${id}`)
   };
-
+  export const updateSinglePost = (formData) => {
+    return fetch('http://localhost:3030/posts/update-post',{
+             method: 'PUT',
+             body: formData
+           });
+   };

@@ -12,12 +12,13 @@ const Blog = () => {
     const { loading, showLoader, hideLoader } = useLoading();
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);
-
+    const [maxPages, setMaxPages] = useState(1);
     useEffect(() => {
       showLoader()
       getPosts(page)
       .then(result => {
         setPosts(result.posts);
+        setMaxPages(Math.ceil(result.totalItems / 4))
         hideLoader();
 
         console.log(result);
@@ -54,10 +55,8 @@ const Blog = () => {
             </Link>}
             <div className='my-5 flex flex-row justify-center'>
               <div onClick={() => setPage(prevPage => Math.max(prevPage - 1, 1))}><Button bg={'btn-primary'}>Предишна</Button></div>
-              <p onClick={() => setPage(page)} className='text-black mx-3 cursor-pointer font-bold p-2'>{page}</p>
-              <p onClick={() => setPage(page + 1)} className='text-black mx-3 cursor-pointer font-bold p-2'>{page + 1}</p>
-              <p onClick={() => setPage(page + 2)} className='text-black mx-3 cursor-pointer font-bold p-2'>{page + 2}</p>
-              <div onClick={() => setPage(prevPage => prevPage + 1)}><Button bg={'btn-primary'}>Следваща</Button></div>
+              <p onClick={() => setPage(page)} className='text-black mx-3 cursor-pointer font-bold p-2'>{page} от {maxPages}</p>
+              <div onClick={() => setPage(prevPage => Math.min(prevPage + 1, maxPages))}><Button bg={'btn-primary'}>Следваща</Button></div>
             </div>
         </div>
       </div>

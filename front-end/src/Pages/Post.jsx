@@ -9,21 +9,21 @@ const Post = () => {
     const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
     const { loading, showLoader, hideLoader } = useLoading();
     const {id} = useParams();
-    const [title,setTitle] = useState('');
-    const [imgSrc, setImgSrc] = useState('');
-    const [content, setContent] = useState('');
+    const [postInfo,setPostInfo] = useState(null);
+    const user = localStorage.getItem('user');
 
     useEffect(() => {
         showLoader()
         getPost(id)
         .then(post => {
-            setTitle(post.title);
-            setImgSrc(post.file);
-            setContent(post.content);
+            setPostInfo(post)
             hideLoader();
-            console.log(post);
         })
     }, [])
+    console.log(postInfo);
+    if (!postInfo) {
+        return ''
+    }
     return loading ? (
         <LoaderModal />
       ) : (
@@ -31,15 +31,20 @@ const Post = () => {
             <section className="flex flex-row w-full justify-around mt-[120px] mb-10 ">
               <div className={` flex flex-col w-full  mx-12`}>
                 <h2 className={`w-full uppercase ${titleCss}`}>
-                  {title}
+                  {postInfo.title}
                 </h2>
-               
+               <h3>{new Date(postInfo.createdAt).toISOString().split('T')[0]}</h3>
+               {user && 
+                <Link to={`/edit/${postInfo._id}`}>
+                    <button className='bg-black rounded-md text-lightgray py-3 px-5 my-2'>Редактирай</button>
+                </Link>
+               }
               </div>
             </section>
             <div>
-                <img src={`http://localhost:3030/${imgSrc}`} className='mx-auto my-10 max-w-[90%]rounded-md shadow-customGray' />
+                <img src={`http://localhost:3030/${postInfo.file}`} className='mx-auto my-10 max-w-[90%] rounded-md shadow-customGray' />
             </div>
-            <div className='mx-auto my-10' dangerouslySetInnerHTML={{__html: content}} />
+            <div className='mx-auto my-10 max-w-[90%]' dangerouslySetInnerHTML={{__html: postInfo.content}} />
             <div className="py-10">
                 <Link  to={"/blog"}>
                     <Button bg={"btn-primary"}>Назад</Button>

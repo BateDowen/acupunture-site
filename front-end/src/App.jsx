@@ -17,6 +17,7 @@ import Admin from "./Pages/Admin";
 import Blog from "./Pages/Blog";
 import CreatePost from "./Pages/CreatePost";
 import Post from "./Pages/Post";
+import EditPost from "./Pages/EditPost";
 
 
 const Layout = () => {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/post/:id",
         element: <Post />,
+      },
+      {
+        path: "/edit/:id",
+        element: <EditPost />,
       },
       {
         path: "/create-post",
