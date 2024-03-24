@@ -41,7 +41,7 @@ const Blog = () => {
                 const date = new Date(p.createdAt);
                 const formattedDate = date.toISOString().split('T')[0];
                 return (
-                  <BlogCard key={p._id} href={`/post/${p._id}`} src={p.file} title={p.title} createAt={formattedDate}/>
+                  <BlogCard key={p._id} href={`https://acupunktura.onrender.com/post/${p._id}`} src={p.file} title={p.title} createAt={formattedDate}/>
                 )
               })}
               

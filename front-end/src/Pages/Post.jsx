@@ -41,7 +41,7 @@ const Post = () => {
               </div>
             </section>
             <div>
-                <img src={`http://localhost:3030/${postInfo.file}`} className='mx-auto my-10 max-w-[90%] rounded-md shadow-customGray' />
+                <img src={`https://acupunktura.onrender.com/${postInfo.file}`} className='mx-auto my-10 max-w-[90%] rounded-md shadow-customGray' />
             </div>
             <div className='mx-auto my-10 max-w-[90%]' dangerouslySetInnerHTML={{__html: postInfo.content}} />
             <div className="py-10">
