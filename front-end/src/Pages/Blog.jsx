@@ -38,7 +38,6 @@ const Blog = () => {
         <div className=' mx-auto pb-10 bg-lightgray'>
             <div className="flex flex-row flex-wrap justify-start px-12 py-10">
               {posts.map(p => {
-                console.log();
                 const date = new Date(p.createdAt);
                 const formattedDate = date.toISOString().split('T')[0];
                 return (

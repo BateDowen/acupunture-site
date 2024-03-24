@@ -38,7 +38,7 @@ export const createDate = (req, res, next) => {
   const reqDate = req.params.date;
   const newDate = new Hours({ date: reqDate, availableHours });
   console.log(req.body);
-  if (!req.body.token) {
+  if (!req.body.user.token) {
     const err = new Error('Not authorized!');
     err.statusCode = 403;
     next(res.json({err, message: err.message}))
@@ -79,7 +79,7 @@ export const deleteAppointment = (req,res,next) => {
     hour.availableHours[hourKey].available = true;
     hour.availableHours[hourKey].clientId = null;
     
-    sendEmail(`${req.body.hour} е свободен`)
+    sendEmail(`${req.body.hour} е свободен`, "Отменен час")
     return hour.save()
   })
   .then((result) => {
@@ -115,7 +115,7 @@ export const bookHour = (req, res, next) => {
     .then(result => {
       hour.availableHours[hourKey].available = false;
       hour.availableHours[hourKey].clientId = result._id;
-      sendEmail(`Име: ${req.body.name}, Тел: ${req.body.phone}, Час: ${req.body.hour}`)
+      sendEmail(`Име: ${req.body.name}, Тел: ${req.body.phone}, Час: ${req.body.hour}`,"Запазен час")
       
       return hour.save()
     })

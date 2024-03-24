@@ -37,7 +37,7 @@ import * as api from './api.js'
     return api.get(`hours/${date}`);
   }
   export const createDate = async (date,user) => {
-    return api.post(`hours/${date}`, user);
+    return api.post(`hours/${date}`, {user});
   };
   export const bookHour = async (email,name,phone,date,hour,hourKey) => {
     return api.post(`hours/book`,{email,name,phone,date,hour,hourKey});
@@ -68,4 +68,7 @@ import * as api from './api.js'
    };
    export const deleteSinglePost = (id,user) =>{
     return api.post(`posts/delete/${id}`,{user})
+  };
+  export const writeMeEmail = (email,name,phone,message) =>{
+    return api.post(`posts/write-email`,{email,name,phone,message})
   };

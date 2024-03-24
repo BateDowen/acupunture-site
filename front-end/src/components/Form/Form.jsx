@@ -16,6 +16,7 @@ const Form = (props) => {
   const [nameError,setNameError] = useState(false);
   const [emailError,setEmailError] = useState(false);
   const [phoneError,setPhoneError] = useState(false);
+  const [message,setMessage] = useState('');
 
   const nameHandler = (e) => {
    setNameError(name === '')
@@ -60,7 +61,7 @@ const Form = (props) => {
         </div>
        { props.message ?
         <div className='relative w-[100%] flex flex-col text-slate-500 px-1'>
-          <textarea type='text' className='form-primary-input'></textarea>
+          <textarea type='text' name='message' value={message} onChange={(e) => setMessage(e.target.value)} className='form-primary-input'></textarea>
         </div> : '' }
         <div className='mt-5'>
           <Button bg={'btn-primary'} >{props.btnText}</Button>

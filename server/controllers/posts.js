@@ -1,41 +1,55 @@
 import fs from 'fs';
 import { Post } from '../models/PostsSchema.js';
+import { sendEmail } from '../sendEmail/sendEmail.js';
 
 export const createPost = (req,res,next) => {
     const {title,  content } = req.body;
-    const post = new Post({title, content, file: req.file.path});
-    post.save()
-    .then(result => {
-        res.json({result} )
-
-    })
-    .catch((err) => {
-        console.log({ err });
-        res.json({err, message: err.message});
-      });
+    const user = req.body.user ? JSON.parse(req.body.user) : undefined;
+    if (user.name == 'Zlati' && user.role == 'admin') {
+        const post = new Post({title, content, file: req.file.path});
+        post.save()
+        .then(result => {
+            res.json({result} )
+    
+        })
+        .catch((err) => {
+            console.log({ err });
+            res.json({err, message: err.message});
+        });
+    } else {
+        res.status(403).json({message: 'Unauthorized!'})
+        
+    }
+    
 };
 export const updatePost = (req,res,next) => {
     const {title,content, id } = req.body;
-    console.log(req.file);
-    Post.findById(id)
-    .then(post => {
-        if (!post) {
-            const err = new Error('Could not find post');
-            err.ststusCode = 404;
-            throw err;
-        };
-        post.title = title;
-        post.content = content;
-        post.file = req.file.path;
-        return post.save()
-    })
-    .then(result => {
-        res.json({result})
-    })
-    .catch((err) => {
-        console.log({ err });
-        res.json({err, message: err.message});
-      });
+    const user = req.body.user ? JSON.parse(req.body.user) : undefined;
+    if (user.name == 'Zlati' && user.role == 'admin') {
+        Post.findById(id)
+        .then(post => {
+            if (!post) {
+                const err = new Error('Could not find post');
+                err.ststusCode = 404;
+                throw err;
+            };
+            post.title = title;
+            post.content = content;
+            post.file = req.file.path;
+            return post.save()
+        })
+        .then(result => {
+            res.json({result})
+        })
+        .catch((err) => {
+            console.log({ err });
+            res.json({err, message: err.message});
+        })
+    } else {
+        res.status(403).json({message: 'Unauthorized!'})
+        
+    }
+    
 
 };
 export const getPosts = (req,res,next) => {
@@ -87,4 +101,12 @@ export const deletePost = (req,res,next) => {
         console.log({ err });
         res.json({err, message: err.message});
     });
+};
+export const writeEmail = (req,res,next) => {
+    sendEmail(`От: ${req.body.name} Тел: ${req.body.phone}
+    Съобщение: ${req.body.message}
+    `, 'Съобщение')
+    res.json({message:'Съобщението е изпратено.'});
+
+
 };

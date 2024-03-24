@@ -63,7 +63,7 @@ const EditPost = () => {
     const deletePost = (ev) => {
         console.log(ev);
         showLoader();
-        deleteSinglePost(id,user)
+        deleteSinglePost(id,JSON.parse(user))
         .then(result => {
             hideLoader();
             navigate('/blog')

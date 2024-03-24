@@ -20,7 +20,6 @@ const Post = () => {
             hideLoader();
         })
     }, [])
-    console.log(postInfo);
     if (!postInfo) {
         return ''
     }
