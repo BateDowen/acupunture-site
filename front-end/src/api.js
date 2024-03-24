@@ -1,5 +1,5 @@
-const host = 'http://localhost:3030/' ;
-// const host = 'https://acupunktura.onrender.com/' ;
+// const host = 'http://localhost:3030/' ;
+const host = 'https://acupunktura.onrender.com/' ;
 
 const request = async (method,url, data) => {
     const options = {

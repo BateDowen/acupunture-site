@@ -49,7 +49,7 @@ import * as api from './api.js'
     return api.post(`hours/delete/${date}`,{date,hourKey,hour,user})
   };
   export const createPost = (formData) => {
-   return fetch('http://localhost:3030/posts/create-post',{
+   return fetch('https://acupunktura.onrender.com/posts/create-post',{
             method: 'POST',
             body: formData
           });
@@ -61,7 +61,7 @@ import * as api from './api.js'
     return api.get(`posts/${id}`)
   };
   export const updateSinglePost = (formData) => {
-    return fetch('http://localhost:3030/posts/update-post',{
+    return fetch('https://acupunktura.onrender.com/posts/update-post',{
              method: 'PUT',
              body: formData
            });
