@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLoading } from '../components/Loader/LoadingCtx';
 import LoaderModal from '../components/Loader/LoaderModal';
 import ReactQuill from 'react-quill';
-import { getPost, updateSinglePost } from '../Utils';
+import { deleteSinglePost, getPost, updateSinglePost } from '../Utils';
 import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../components/Button/Button';
 
@@ -14,7 +14,6 @@ const EditPost = () => {
     const user = localStorage.getItem('user')
 
     const [title,setTitle] = useState('');
-    const [summary,setSummary] = useState('');
     const [content,setContent] = useState('');
     const [file,setFile] = useState('');
     const  modules  = {
@@ -35,7 +34,6 @@ const EditPost = () => {
         getPost(id)
         .then(postInfo => {
             setTitle(postInfo.title);
-            setSummary(postInfo.summary);
             setContent(postInfo.content);
             hideLoader()
         })
@@ -47,7 +45,6 @@ const EditPost = () => {
             formData.set('file', file?.[0])
         }
         formData.set('title', title)
-        formData.set('summary', summary);
         formData.set('content', content);
         formData.set('id', id);
         formData.set('user', user);
@@ -62,8 +59,18 @@ const EditPost = () => {
             hideLoader()
             navigate(`/post/${id}`)
         })
-        
-    }
+    };
+    const deletePost = (ev) => {
+        console.log(ev);
+        showLoader();
+        deleteSinglePost(id,user)
+        .then(result => {
+            hideLoader();
+            navigate('/blog')
+            console.log(result);
+        })
+    };
+
     return loading ? (
         <LoaderModal /> )
          : (
@@ -78,11 +85,13 @@ const EditPost = () => {
         </section>
         <form action='/posts/edit' encType='multipart/form-data' onSubmit={updatePost}  className='flex flex-col rounded-2xl bg-lightgray w-[50%] max-md:w-[80%] mb-10 p-8 mx-auto font-light shadow-customGray'>
             <input className={formInputCss} type='title' name='title' placeholder='Заглавие' value={title} onChange={ev => setTitle(ev.target.value)}></input>
-            <input className={formInputCss} type='summary' name='summary' placeholder='Заглавие' value={summary} onChange={ev => setSummary(ev.target.value)}></input>
             <input className={formInputCss} type='file' name='file' onChange={ev =>setFile(ev.target.files)}></input>
             <ReactQuill value={content} modules={modules} onChange={newValue => setContent(newValue)} />
             <div  className='mt-10'><Button bg={'btn-primary'}>Редактирай пост</Button></div>
         </form>
+        <div className='text-black my-5 py-3' onClick={deletePost}>Внимание!
+            <div><Button bg={'btn-primary'}>Изтрий пост</Button></div>
+        </div>
     </div> 
     )
 }

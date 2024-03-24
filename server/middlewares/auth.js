@@ -10,7 +10,6 @@ export const isAdmin = (req,res,next) =>{
             
         }
     } else {
-        console.log('isAuth ' + user);
         res.json({message: 'Unauthorized!'})
     }
 }

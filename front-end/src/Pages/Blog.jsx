@@ -20,8 +20,6 @@ const Blog = () => {
         setPosts(result.posts);
         setMaxPages(Math.ceil(result.totalItems / 4))
         hideLoader();
-
-        console.log(result);
       })
     },[page])
 

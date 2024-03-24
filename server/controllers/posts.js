@@ -2,10 +2,8 @@ import fs from 'fs';
 import { Post } from '../models/PostsSchema.js';
 
 export const createPost = (req,res,next) => {
-    console.log(req.file);
-    
-    const {title, summary, content } = req.body;
-    const post = new Post({title, summary, content, file: req.file.path});
+    const {title,  content } = req.body;
+    const post = new Post({title, content, file: req.file.path});
     post.save()
     .then(result => {
         res.json({result} )
@@ -17,7 +15,8 @@ export const createPost = (req,res,next) => {
       });
 };
 export const updatePost = (req,res,next) => {
-    const {title, summary, content, id } = req.body;
+    const {title,content, id } = req.body;
+    console.log(req.file);
     Post.findById(id)
     .then(post => {
         if (!post) {
@@ -26,7 +25,6 @@ export const updatePost = (req,res,next) => {
             throw err;
         };
         post.title = title;
-        post.summary = summary;
         post.content = content;
         post.file = req.file.path;
         return post.save()
@@ -39,11 +37,10 @@ export const updatePost = (req,res,next) => {
         res.json({err, message: err.message});
       });
 
-    console.log(req);
 };
 export const getPosts = (req,res,next) => {
     const currentPage = req.query.page || 1;
-    const perPage = 2;
+    const perPage = 4;
     let totalItems;
 
     Post.find()
@@ -59,12 +56,10 @@ export const getPosts = (req,res,next) => {
          .json({message: 'Post fetched successfuly', posts: posts, totalItems: totalItems});
  
      })
-    .catch(err => {
-        if (!err.statusCode) {
-            err.statusCode = 500;
-        }
-        next(err);
-    })
+     .catch((err) => {
+        console.log({ err });
+        res.json({err, message: err.message});
+      });
 };
 export const getSingePost = (req,res,next) => {
     const { id } = req.params;
@@ -72,4 +67,24 @@ export const getSingePost = (req,res,next) => {
     .then(post =>{
         res.status(200).json(post)
     })
+    .catch((err) => {
+        console.log({ err });
+        res.json({err, message: err.message});
+    });
+};
+export const deletePost = (req,res,next) => {
+    const { id } = req.params;
+    Post.findByIdAndDelete(id)
+    .then(result => {
+        if (!result) {
+            const err = new Error('Could not find post');
+            err.ststusCode = 404;
+            throw err;
+        };
+        res.json({message: "Постът е изтрит!"})
+    })
+    .catch((err) => {
+        console.log({ err });
+        res.json({err, message: err.message});
+    });
 };

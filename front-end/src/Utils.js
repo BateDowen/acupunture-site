@@ -66,3 +66,6 @@ import * as api from './api.js'
              body: formData
            });
    };
+   export const deleteSinglePost = (id,user) =>{
+    return api.post(`posts/delete/${id}`,{user})
+  };
