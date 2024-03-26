@@ -5,6 +5,7 @@ import Button from '../components/Button/Button';
 import { useLoading } from '../components/Loader/LoadingCtx';
 import LoaderModal from '../components/Loader/LoaderModal';
 import { getPosts } from '../Utils';
+import { host } from '../api';
 
 const Blog = () => {
     const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
@@ -41,7 +42,7 @@ const Blog = () => {
                 const date = new Date(p.createdAt);
                 const formattedDate = date.toISOString().split('T')[0];
                 return (
-                  <BlogCard key={p._id} href={`https://acupunktura.onrender.com/post/${p._id}`} src={p.file} title={p.title} createAt={formattedDate}/>
+                  <BlogCard key={p._id} href={`/post/${p._id}`} src={p.file} title={p.title} createAt={formattedDate}/>
                 )
               })}
               

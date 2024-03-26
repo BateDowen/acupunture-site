@@ -6,6 +6,7 @@ import { useLoading } from "../components/Loader/LoadingCtx";
 import { useEffect, useState } from "react";
 import { getPosts, writeMeEmail } from "../Utils";
 import LoaderModal from "../components/Loader/LoaderModal";
+import { host } from "../api";
 
 const Home = () => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";

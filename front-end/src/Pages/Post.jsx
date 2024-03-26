@@ -4,6 +4,7 @@ import LoaderModal from '../components/Loader/LoaderModal';
 import { Link, useParams } from 'react-router-dom';
 import { getPost } from '../Utils';
 import Button from '../components/Button/Button';
+import { host } from '../api';
 
 const Post = () => {
     const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
@@ -41,7 +42,7 @@ const Post = () => {
               </div>
             </section>
             <div>
-                <img src={`https://acupunktura.onrender.com/${postInfo.file}`} className='mx-auto my-10 max-w-[90%] rounded-md shadow-customGray' />
+                <img src={`${host}${postInfo.file}`} className='mx-auto my-10 max-w-[90%] rounded-md shadow-customGray' />
             </div>
             <div className='mx-auto my-10 max-w-[90%]' dangerouslySetInnerHTML={{__html: postInfo.content}} />
             <div className="py-10">
