@@ -105,14 +105,12 @@ const router = createBrowserRouter([
 const App = () => {
  
   return (
-    <div>
-      <div>
+    <>
           <LoadingProvider>
             <RouterProvider router={router} >
             </RouterProvider>
           </LoadingProvider>
-      </div>
-    </div>
+    </>
   );
 };
 
