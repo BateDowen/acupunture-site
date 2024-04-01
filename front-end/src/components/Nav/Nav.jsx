@@ -15,7 +15,7 @@ const Nav = () => {
       <section className="flex flex-row justify-between items-center bg-white fixed w-[100%] shadow-md z-30">
         <div className="p-10 text-[#48B6BB]">
           <NavLink to={"/"} className="text-[#747272] hover:text-darkwood">
-            <img src="../../logo.webp" alt="" height={100} width={100} className="rounded-full"/>
+            <img src="../../logoCut.jpg" alt="" height={100} width={100} className="rounded-full"/>
           </NavLink>
         </div>
         <div className={`nav-primary `}>

@@ -36,23 +36,31 @@ const Home = () => {
       <LoaderModal />
     ) : (
     <div className="text-center relative pt-[100px] w-full">
-      <section
-        className="flex flex-col w-full h-[300px] sm:h-[400px]
-          bg-[url('../public/topSectionImage.jpg')]
-          opacity-50 bg-cover bg-center
+       <section
+        className="flex flex-col w-full h-[350px] sm:h-[300px]
+        bg-[url('../public/topSectionImage.jpg')]
+        opacity-70   bg-cover bg-center
            "
-      ></section>
-      <div className="text-center  w-full absolute top-[8%] sm:top-[10%] md:top-[13%]">
-        <h1 className={`uppercase  ${titleCss}`}>Златомир Трифонов</h1>
-        <p className=" text-[20px]  text-[#414141] mb-3">Рехабилитация и акупунктура</p>
-       
+           ></section>
+
+      <div className=" w-full absolute top-[8%] md:top-[10%] flex flex-col md:flex-row justify-center items-center">
+      
+        <p className=" md:text-[21px] text-[14px] text-center font-bold text-black w-[60%] mx-auto">Помагам при болки в гърба, изтръпване на крайници, дискови хернии,
+                дегенератативни промени, мигрена, шум в ушите, проблеми със съня, консултация при хранителни разстройства,
+                съвети за хранене.</p>
+           
       </div>
-      <div className=" pt-12 pb-12 w-full bg-lightgray ">
+      <div className=" pt-12 pb-12 w-full">
         <div className="flex flex-row justify-center max-[640px]:flex-col items-center px-12">
+        <img
+            src="../../zlatipic.jpg"
+            alt="massage"
+            className="mx-4 mb-3 rounded-full  shadow-customGray bg-center  w-[350px] lg:h-[280px] sm:h-[320px]"
+            />
           <div className="flex flex-col text-left mx-4">
-            <h2 className={`uppercase ${titleCss}`}>За мен</h2>
+            <p className="font-bold text-xl my-2">Здравейте! Казвам се Златомир Трифонов</p>
             <p className=" my-2">
-              Работата ми е базирана в използването на няколко методики за
+            Работата ми е базирана в използването на няколко методики за
               справяне с хронична болка, травми и различни състояния на тялото .
               Лечебният масаж е в основата на първи избор, съчетан с акупунктура
               ( иглотерапия) и вендузотерапия.
@@ -63,11 +71,7 @@ const Home = () => {
               </NavLink>
             </div>
           </div>
-          <img
-            src="../../massage.jpg"
-            alt="massage"
-            className="mx-4 py-2 rounded-3xl w-[350px] lg:h-[280px] sm:h-[320px]"
-          />
+          
         </div>
       </div>
       <div className=" mx-auto py-5 bg-wood">

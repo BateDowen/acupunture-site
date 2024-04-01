@@ -12,14 +12,14 @@ const Footer = () => {
       <div className=' mx-auto w-[80%]'>
         <div className=' flex flex-col sm:flex-row mb-4 justify-between'>
           <div className=' sm:ml-0'>
-            <img src="../../logo.webp" alt="logo" height={80} width={80} className='rounded-full'/>
+            <img src="../../logoCut.jpg" alt="logo" height={80} width={80} className='rounded-full'/>
           </div>
           <div className='flex flex-col mx-3 my-2'>
             <div className=''>
               <h5 className=' uppercase font-bold text-lg'>Услуги</h5>
             </div>
             <ul className=' text-base'>
-              <li>Терапевтичен масаж</li>
+              <li>Лечебен масаж</li>
               <li>Акупунктура</li>
               <li>Индивидуална рехабилитационна програма</li>
               {!user ? <Link to={'login'}>
