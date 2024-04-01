@@ -100,9 +100,9 @@ const Appointments = () => {
     setErr("");
     setIsShown(false);
   };
-  const isWeekend = (date) => {
+  const isSunday = (date) => {
     const day = date.getDay();
-    return day === 0 || day === 6; // Sunday (0) or Saturday (6)
+    return day === 0; // Sunday (0) or Saturday (6)
   };
   return (
     loading ? <LoaderModal /> :
@@ -129,7 +129,7 @@ const Appointments = () => {
                 onChange={(item) => setDate(item)}
                 date={date}
                 minDate={new Date()}
-                disabledDay={date => isWeekend(date)}
+                disabledDay={date => isSunday(date)}
               />
             </div>
             <div className="my-8 flex justify-center">

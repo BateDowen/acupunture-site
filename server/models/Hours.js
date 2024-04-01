@@ -56,6 +56,21 @@ const hoursSchema = new mongoose.Schema({
       available: Boolean,
       clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
     },
+    ningth: {
+      hour: { type: String },
+      available: Boolean,
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
+    },
+    tenth: {
+      hour: { type: String },
+      available: Boolean,
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
+    },
+    eleventh: {
+      hour: { type: String },
+      available: Boolean,
+      clientId: { type: mongoose.Schema.Types.ObjectId, ref: "BookingRecord" },
+    },
   },
 });
 
