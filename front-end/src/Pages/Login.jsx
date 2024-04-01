@@ -50,7 +50,7 @@ const Login = () => {
       <div className='my-5 mx-auto max-w-[70%]'>
         <p>{response || ''}</p>
       <form action="" className={`form-primary ${classes['fade-in']}`} onSubmit={onSubmit}>
-      <div className='my-5 flex flex-col max-sm:flex-col'>
+      <div className='my-5 flex w-[100%] flex-col max-sm:flex-col'>
             <div className='relative  max-sm:w-[100%] my-1 flex flex-col text-slate-500 px-1'>
                 <label htmlFor="name" className=' absolute top-1 left-[9px] text-sm '>Име</label>
                 <input id='name' name='name' type="text" placeholder='Име'

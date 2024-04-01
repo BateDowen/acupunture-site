@@ -7,7 +7,7 @@ let availableHours = {
   second: {hour:"09:00 - 10:00",available: true, clientId: null},
   third: {hour:"10:00 - 11:00",available: true, clientId: null},
   fourth: {hour:"11:00 - 12:00",available: true, clientId: null},
-  fifth: {hour:"12:00 - 13:00",available: false, clientId: null},
+  fifth: {hour:"12:00 - 13:00",available: true, clientId: null},
   sixth: {hour:"13:00 - 14:00",available: false, clientId: null},
   seventh: {hour:"14:00 - 15:00",available: false, clientId: null},
   eighth: {hour:"15:00 - 16:00",available: false, clientId: null},
