@@ -19,12 +19,22 @@ export default {
           opacity: 1,
           transform: {translateY:'0px', scale: 1}
          }
+        },
+        'customPing' : {
+          'from': {
+            opacity: 1,
+            transform: 'scale(1)'
+          },
+          'to': {
+            opacity: 0.7,
+            transform: 'scale(1.1)'
+          } 
         }
       },
      
     animation:{
       'fade-up': 'fade-up 2s ease-in-out ',
-
+      'customPing': 'customPing 1s cubic-bezier(0, 0, 0.2, 1) infinite'
     },
     boxShadow: {
       'customGray': 'rgba(0, 0, 0, 0.2) 0 0 20px'

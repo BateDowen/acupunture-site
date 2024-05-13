@@ -1,8 +1,8 @@
-const Prices = () => {
+const Prices = ({inHomePage}) => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
 
   return (
-    <div className=" bg-white relative pt-[100px] w-full mx-auto text-center">
+    <div className={ `bg-white relative ${inHomePage ? 'pt-0' : 'pt-[100px]' }  w-full mx-auto text-center`}>
       <section className="flex flex-row w-full justify-around mt-[120px] ">
         <div className={` flex flex-col w-full mb-[30px] mx-12`}>
           <h2 className={`w-full uppercase ${titleCss} `}>Цени</h2>

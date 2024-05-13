@@ -24,7 +24,7 @@ const Nav = () => {
           <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  Блог</NavLink>
           <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Цени</NavLink>
           <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}>  Контакти</NavLink>
-          <NavLink to={'/appointments'} className=' ml-3'><Button bg="btn-primary">Запазете час</Button></NavLink>
+          <NavLink to={'/appointments'} className=' ml-3'><div className="shadow-customGray  rounded-full animate-bounce"><Button bg="btn-primary">Запазете час</Button></div></NavLink>
         </div>
         <div className="hidden max-md:block px-4">
           <img onClick={showNavHandler} src="../../hamburger.svg" alt="hamb" width={25} height={25} />
@@ -37,7 +37,9 @@ const Nav = () => {
              <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Цени</NavLink>
              <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Контакти</NavLink>
              <NavLink to={'/appointments'}>
-              <Button bg="btn-primary">Запазете час</Button>
+              <div className=" mx-auto rounded-full animate-bounce">
+                <Button bg="btn-primary">Запазете час</Button>
+              </div>
              </NavLink>
             </div>
         </div>

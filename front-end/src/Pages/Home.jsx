@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { getPosts, writeMeEmail } from "../Utils";
 import LoaderModal from "../components/Loader/LoaderModal";
 import { host } from "../api";
+import Prices from "./Prices";
 
 const Home = () => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
@@ -43,14 +44,14 @@ const Home = () => {
            "
            ></section>
 
-      <div className=" w-full absolute top-[8%] md:top-[10%] flex flex-col md:flex-row justify-center items-center">
+      <div className=" w-full absolute top-[8%] md:top-[8%] flex flex-col md:flex-row justify-center items-center">
       
-        <p className=" md:text-[21px] text-[14px] text-center font-bold text-black w-[60%] mx-auto">Помагам при болки в гърба, изтръпване на крайници, дискови хернии,
+        <p className=" md:text-[19px] text-[16px] text-center font-bold text-black w-[60%] mx-auto">Помагам при болки в гърба, изтръпване на крайници, дискови хернии,
                 дегенератативни промени, мигрена, шум в ушите, проблеми със съня, консултация при хранителни разстройства,
                 съвети за хранене.</p>
            
       </div>
-      <div className=" pt-12 pb-12 w-full">
+      <div className=" pt-12 pb-12 mx-auto ">
         <div className="flex flex-row justify-center max-[640px]:flex-col items-center px-12">
         <img
             src="../../zlatipic.jpg"
@@ -92,6 +93,11 @@ const Home = () => {
             <Button bg="btn-secondary">Виж всички</Button>
           </NavLink>
         </div>
+      </div>
+      <div className="mb-5 mx-auto" >
+          <Prices inHomePage={true} />
+          <NavLink to={'/appointments'} className=' ml-3'><div className="max-md:animate-bounce"><Button bg="btn-primary">Запазете час</Button></div></NavLink>
+
       </div>
       <div className="mx-auto py-5 bg-lightgray ">
         <h3 className={`uppercase ${titleCss} py-6`}>Пишете ни</h3>

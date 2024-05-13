@@ -3,4 +3,5 @@
 }
 .btn-secondary{
     @apply bg-darkwood hover:bg-black
+    
 }
