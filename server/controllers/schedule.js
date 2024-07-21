@@ -3,6 +3,7 @@ import { Schedule } from "../models/ScheduleSchema.js";
 
 export const getSchedule = (req, res, next) => {
   const reqDate = req.body.date;
+  console.log(reqDate);
   Schedule.findOne({
     date: reqDate,
   })
