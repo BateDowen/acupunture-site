@@ -7,6 +7,7 @@ import authRouter from "./routes/auth.js";
 import postRouter from "./routes/posts.js";
 import multer from "multer";
 import path from 'path';
+import scheduleRouter from "./routes/schedule.js";
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,6 +36,7 @@ const storage = multer.diskStorage({
 app.use('/hours', hourRouter);
 app.use('/auth',authRouter);
 app.use('/posts', postRouter);
+app.use('/schedule', scheduleRouter)
 
 
 
