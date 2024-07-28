@@ -2,7 +2,7 @@ import { Person } from "../models/PersonSchedule.js";
 import { Schedule } from "../models/ScheduleSchema.js";
 
 export const getSchedule = (req, res, next) => {
-  const reqDate = req.body.date;
+  const reqDate = req.params.date;
   console.log(reqDate);
   Schedule.findOne({
     date: reqDate,
