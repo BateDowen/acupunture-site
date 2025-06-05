@@ -35,10 +35,10 @@ const Contacts = () => {
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                   />
                 </svg>
-                Пловдив
+                Казанлък
               </span>
               <span className="text-base ml-5">
-                кв. Мараша ул. “8-ми март 1” офис Юмейхо{" "}
+              6100, България
               </span>
             </p>
             <p>
@@ -116,14 +116,14 @@ const Contacts = () => {
                     d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
-                <span className="text-base ml-3">Пон-Сб: 09:00-19:00</span>
+                <span className="text-base ml-3">Вт-Чет: 10-16ч.</span>
               </span>
             </p>
           </div>
         </div>
         <div className="w-[280px] sm:w-[58%]">
           <iframe
-            src="https://maps.google.com/maps?q=plovdiv%20ul.%208-mi%20mart%201&t=m&z=14&output=embed&iwloc=near"
+            src="https://maps.google.com/maps?q=kazanlak%20&t=m&z=14&output=embed&iwloc=near"
             className="bg-white p-3 rounded-md shadow-md h-[300px] w-full"
           ></iframe>
         </div>

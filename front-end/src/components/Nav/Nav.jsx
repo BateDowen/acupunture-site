@@ -15,12 +15,12 @@ const Nav = () => {
       <section className="flex flex-row justify-between items-center bg-white fixed w-[100%] shadow-md z-30">
         <div className="p-10 text-[#48B6BB]">
           <NavLink to={"/"} className="text-[#747272] hover:text-darkwood">
-            <img src="../../logoCut.jpg" alt="" height={100} width={100} className="rounded-full"/>
+            <img src="../../logo.png" alt="" height={100} width={100} className="rounded-full"/>
           </NavLink>
         </div>
         <div className={`nav-primary `}>
           <NavLink to={"/"}className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Начало</NavLink>
-          <NavLink to={"/about"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  За мен</NavLink>
+          <NavLink to={"/about"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  За нас</NavLink>
           <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  Блог</NavLink>
           <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Цени</NavLink>
           <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}>  Контакти</NavLink>
@@ -32,7 +32,7 @@ const Nav = () => {
            <div onClick={showNavHandler} className={`${dinamicCss} small-screen-nav shadow-md h-full bg-lightwood`}>
             <div className={`${dinamicCss} small-screen-nav border-b-0 text-xl font-bold bg-lightwood`}>
              <NavLink to={"/"}className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Начало</NavLink>
-             <NavLink to={"/about"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  За мен</NavLink>
+             <NavLink to={"/about"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  За нас</NavLink>
              <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Блог</NavLink>
              <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Цени</NavLink>
              <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Контакти</NavLink>

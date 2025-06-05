@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useLoading } from '../components/Loader/LoadingCtx';
 import LoaderModal from '../components/Loader/LoaderModal';
-import ReactQuill from 'react-quill';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 import { deleteSinglePost, getPost, updateSinglePost } from '../Utils';
 import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../components/Button/Button';

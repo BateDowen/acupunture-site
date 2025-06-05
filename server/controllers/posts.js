@@ -66,6 +66,7 @@ export const getPosts = (req,res,next) => {
      .limit(perPage);
     })
      .then(posts =>{
+        console.log({posts});
          res.status(200)
          .json({message: 'Post fetched successfuly', posts: posts, totalItems: totalItems});
  

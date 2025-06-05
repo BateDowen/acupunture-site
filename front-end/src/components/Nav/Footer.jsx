@@ -12,16 +12,15 @@ const Footer = () => {
       <div className=' mx-auto w-[80%]'>
         <div className=' flex flex-col sm:flex-row mb-4 justify-between'>
           <div className=' sm:ml-0'>
-            <img src="../../logoCut.jpg" alt="logo" height={80} width={80} className='rounded-full'/>
+            <img src="../../logo.png" alt="logo" height={80} width={80} className='rounded-full'/>
           </div>
           <div className='flex flex-col mx-3 my-2'>
             <div className=''>
               <h5 className=' uppercase font-bold text-lg'>Услуги</h5>
             </div>
             <ul className=' text-base'>
-              <li>Лечебен масаж</li>
-              <li>Акупунктура</li>
-              <li>Индивидуална рехабилитационна програма</li>
+              <li>Астро-психологична консултация </li>
+              <li>Цялостен, Интердисциплинарен Астрологичен анализ</li>
               {!user ? <Link to={'login'}>
                 <li>Админ</li>
               </Link> : 
@@ -42,9 +41,9 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                 </svg>
-                 Пловдив
+                Казанлък
               </span>
-              <span className='text-base ml-5'>кв. Мараша ул. “8-ми март 1” офис Юмейхо </span>
+              <span className='text-base ml-5'> 6100, България</span>
             </p>
             <p>
               <span className=' flex flex-col'>
@@ -79,7 +78,7 @@ const Footer = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <span className='text-base ml-3'>Пон-Сб: 09:00-19:00</span>
+                <span className='text-base ml-3'>Вт-Чет: 10-16ч.</span>
               </span>
             </p>
 

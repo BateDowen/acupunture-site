@@ -1,5 +1,6 @@
 // const host = 'http://localhost:3030/' ;
-export const host = 'https://acupunktura.onrender.com/' ;
+// export const host = 'https://acupunktura.onrender.com/' ;
+export const host = 'http://localhost:3030/' ;
 
 const request = async (method,url, data) => {
     const options = {
