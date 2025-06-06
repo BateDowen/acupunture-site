@@ -9,6 +9,7 @@ const Nav = () => {
   const showNavHandler = () => {
     setIsHidden(!isHidden);
   };
+  const navigate = useNavigate()
 // TODO modal navbar
   return (
     <div className=" h-full">
@@ -22,9 +23,9 @@ const Nav = () => {
           <NavLink to={"/"}className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Начало</NavLink>
           <NavLink to={"/about"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  За нас</NavLink>
           <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  Блог</NavLink>
-          <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Цени</NavLink>
+          <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Услуги</NavLink>
           <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}>  Контакти</NavLink>
-          <NavLink to={'/appointments'} className=' ml-3'><div className="shadow-customGray  rounded-full animate-bounce"><Button bg="btn-primary">Запазете час</Button></div></NavLink>
+          <a href='tel:+359893711399'  className=' ml-3'><div className="shadow-customGray  rounded-full animate-bounce"><Button bg="btn-primary">Запазете час</Button></div></a>
         </div>
         <div className="hidden max-md:block px-4">
           <img onClick={showNavHandler} src="../../hamburger.svg" alt="hamb" width={25} height={25} />
@@ -34,13 +35,13 @@ const Nav = () => {
              <NavLink to={"/"}className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Начало</NavLink>
              <NavLink to={"/about"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  За нас</NavLink>
              <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Блог</NavLink>
-             <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Цени</NavLink>
+             <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Услуги</NavLink>
              <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Контакти</NavLink>
-             <NavLink to={'/appointments'}>
+             <a href='tel:+359893711399' >
               <div className=" mx-auto rounded-full animate-bounce">
                 <Button bg="btn-primary">Запазете час</Button>
               </div>
-             </NavLink>
+             </a>
             </div>
         </div>
       </section>

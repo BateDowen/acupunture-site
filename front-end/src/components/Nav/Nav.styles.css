@@ -3,7 +3,7 @@
 }
 
 .small-screen-nav{
-    @apply  fixed w-[70%] h-[50%]  bg-wood text-center text-darkwood text-xl border border-slate-200  justify-between py-10 right-0 top-[160px] flex flex-col ;
+    @apply  fixed w-[70%] h-[50%]  bg-wood text-center text-darkwood text-xl border border-slate-200  justify-between py-10 right-0 top-[145px] flex flex-col ;
     
 }
 .nav-link-active {

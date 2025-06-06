@@ -113,11 +113,6 @@ const Home = () => {
       </div>
       <div className="mb-5 mx-auto">
         <Prices inHomePage={true} />
-        <NavLink to={"/appointments"} className=" ml-3">
-          <div className="max-md:animate-bounce">
-            <Button bg="btn-primary">Запазете час</Button>
-          </div>
-        </NavLink>
       </div>
       <div className="mx-auto py-5 bg-lightgray ">
         <h3 className={`uppercase ${titleCss} py-6`}>Пишете ни</h3>

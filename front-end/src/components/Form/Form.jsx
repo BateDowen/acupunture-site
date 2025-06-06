@@ -29,7 +29,7 @@ const Form = (props) => {
    };
   return (
     <div className=' mx-auto '>
-      <form action="" className={`form-primary ${classes['fade-in']}`} onSubmit={props.onSubmit}>
+      <form action="" id='form' className={`form-primary ${classes['fade-in']}`} onSubmit={props.onSubmit}>
         <div className='relative w-[100%] flex flex-col text-slate-500 px-1'>
             <label htmlFor="name" className=' absolute top-1 left-[9px] text-sm '>Вашето име</label>
             <input id='name' name='name' type="text" placeholder='Име и фамилия' 
