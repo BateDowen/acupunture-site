@@ -75,18 +75,18 @@ const router = createBrowserRouter([
         path: "/create-post",
         element: <CreatePost />,
       },
-      {
-        path: "/appointments",
-        element: <Appointments />,
-      },
-      {
-        path: "/hours/:date",
-        element: <AvailableHours />,
-      },
-      {
-        path: "/hours/:date/:hourKey/:hour",
-        element: <BookHour />,
-      },
+      // {
+      //   path: "/appointments",
+      //   element: <Appointments />,
+      // },
+      // {
+      //   path: "/hours/:date",
+      //   element: <AvailableHours />,
+      // },
+      // {
+      //   path: "/hours/:date/:hourKey/:hour",
+      //   element: <BookHour />,
+      // },
       {
         path: "/login",
         element: <Login />,

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import * as api from './api.js'
+import { allPosts } from "./posts.js";
  export const demoHours = [
     {
       1707948000000: {
@@ -55,7 +56,10 @@ import * as api from './api.js'
           });
   };
   export const getPosts = (page) =>{
-    return api.get(`posts?page=${page}`)
+    // return api.get(`posts?page=${page}`)
+    return  new Promise((resolve, reject) => {
+      resolve(allPosts);
+    });
   };
   export const getPost = (id) =>{
     return api.get(`posts/${id}`)

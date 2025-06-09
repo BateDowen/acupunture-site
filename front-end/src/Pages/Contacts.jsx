@@ -63,7 +63,7 @@ const Contacts = () => {
             </p>
             <p className="flex flex-row mt-2">
               <a
-                href="https://www.facebook.com/MTZlatomirTrifonov"
+                href="https://www.facebook.com/alternativencentarrazvitie"
                 target="_blank"
                 className='transition ease-in-out hover:-translate-y-1 hover:scale-125'
                 rel="noopener noreferrer"

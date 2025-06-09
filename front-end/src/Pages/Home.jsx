@@ -8,19 +8,21 @@ import { getPosts, writeMeEmail } from "../Utils";
 import LoaderModal from "../components/Loader/LoaderModal";
 import { host } from "../api";
 import Prices from "./Prices";
+import { allPosts } from "../posts";
 
 const Home = () => {
   const titleCss = "text-black text-2xl sm:text-3xl font-bold mb-3";
   const { loading, showLoader, hideLoader } = useLoading();
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    showLoader();
-    getPosts().then((result) => {
-      setPosts(result.posts);
-      hideLoader();
-    });
-  }, []);
+  // useEffect(() => {
+  //   showLoader();
+  //   getPosts().then((result) => {
+  //     console.log('home', {posts});
+  //     setPosts(result.posts);
+  //     hideLoader();
+  //   });
+  // }, []);
   const writeEmail = (ev) => {
     ev.preventDefault();
     let formData = new FormData(ev.currentTarget);
@@ -90,16 +92,16 @@ const Home = () => {
           Последни публикации
         </h3>
         <div className="flex flex-row flex-wrap justify-start px-12">
-          {posts.length > 0 &&
-            posts.map((i, index) => {
-              const date = new Date(posts[index].createdAt);
+          {allPosts.length > 0 &&
+            allPosts.map((post) => {
+              const date = new Date(post.createdAt);
               const formattedDate = date.toISOString().split("T")[0];
               return (
                 <BlogCard
-                  key={posts[index]._id}
-                  href={`/post/${posts[index]._id}`}
-                  src={posts[index].file}
-                  title={posts[index].title}
+                  key={post.id}
+                  href={`/post/${post.id}`}
+                  src={post.file}
+                  title={post.title}
                   createAt={formattedDate}
                 />
               );
