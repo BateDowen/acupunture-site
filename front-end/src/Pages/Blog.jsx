@@ -28,7 +28,6 @@ const Blog = () => {
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
   const startIndex = (page - 1) * POSTS_PER_PAGE;
   const currentPosts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
-  console.log("Blog----> ", currentPosts);
   return loading ? (
     <LoaderModal />
   ) : (

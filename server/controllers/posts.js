@@ -104,7 +104,7 @@ export const deletePost = (req,res,next) => {
     });
 };
 export const writeEmail = (req,res,next) => {
-    sendEmail(`От: ${req.body.name} Тел: ${req.body.phone}
+    sendEmail(`От: ${req.body.name} Имейл: ${req.body.email}  Тел: ${req.body.phone}
     Съобщение: ${req.body.message}
     `, 'Съобщение')
     res.json({message:'Съобщението е изпратено.'});

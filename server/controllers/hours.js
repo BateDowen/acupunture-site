@@ -118,7 +118,7 @@ export const bookHour = (req, res, next) => {
     .then(result => {
       hour.availableHours[hourKey].available = false;
       hour.availableHours[hourKey].clientId = result._id;
-      sendEmail(`Име: ${req.body.name}, Тел: ${req.body.phone}, Час: ${req.body.hour}`,"Запазен час")
+      sendEmail(`Име: ${req.body.name}, Имейл: ${req.body.email} Тел: ${req.body.phone}, Час: ${req.body.hour}`,"Запазен час")
       
       return hour.save()
     })

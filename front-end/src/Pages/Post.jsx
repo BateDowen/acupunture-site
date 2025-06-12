@@ -14,7 +14,6 @@ const Post = () => {
   // const [postInfo,setPostInfo] = useState(null);
   const postInfo = allPosts.find((postId) => postId.id === id);
   const user = localStorage.getItem("user");
-  console.log("Post", postInfo);
   // useEffect(() => {
   //     showLoader()
   //     getPost(id)
