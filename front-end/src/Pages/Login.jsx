@@ -30,7 +30,7 @@ const Login = () => {
         console.log(user);
         localStorage.setItem('user',JSON.stringify(user));
         setResponse(null);
-        navigate('/appointments')
+        navigate('/')
         }
         hideLoader()
         // e.target.reset()
