@@ -1,6 +1,7 @@
 // export const host = 'http://localhost:3030/' ;
-export const host = 'https://acupunktura.onrender.com/' ;
-
+// export const host = 'https://acupunktura.onrender.com/' ;
+export const host = import.meta.env.VITE_HOST ;
+console.log(host);
 const request = async (method,url, data) => {
     const options = {
         method,

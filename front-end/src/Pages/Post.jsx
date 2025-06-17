@@ -42,8 +42,9 @@ const Post = () => {
       </section>
       <div>
         <img
-          src={`${host}${postInfo.file}`}
-          className="mx-auto my-10 max-w-[90%] rounded-md shadow-customGray"
+          // src={`${host}${postInfo.file}`}
+          src={`${import.meta.env.VITE_FRONT_END_URL}${postInfo.file}`}
+          className="mx-auto my-10 max-w-[90%] rounded-md shadow-customGray h-[200px] md:h-[300px]"
         />
       </div>
       {/* <div className='mx-auto my-10 max-w-[90%]' dangerouslySetInnerHTML={{__html: postInfo.content}} /> */}
