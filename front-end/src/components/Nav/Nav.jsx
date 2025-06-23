@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import  "./Nav.styles.css";
 import { useState } from "react";
 import Button from "../Button/Button";
@@ -25,7 +25,23 @@ const Nav = () => {
           <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')} >  Блог</NavLink>
           <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}> Услуги</NavLink>
           <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' nav-link-active' : ' nav-link-not-active')}>  Контакти</NavLink>
-          <a href='tel:+359893711399'  className=' ml-3'><div className="shadow-customGray  rounded-full animate-bounce"><Button bg="btn-primary">Запазете час</Button></div></a>
+          {/* <a href={`${import.meta.env.VITE_FRONT_END_URL}#writeUs`} */}
+          <div 
+          onClick={(e) => {
+            e.preventDefault(); 
+            navigate('/')
+            setTimeout(() => {
+              const element = document.getElementById("writeUs");
+              element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+            }, 200);
+          }}  
+          className=' ml-3'>
+            <div className="shadow-customGray  rounded-full animate-bounce">
+              <Button bg="btn-primary">Запазете час</Button>
+            </div>
+            </div>
+
+          {/* </a> */}
         </div>
         <div className="hidden max-md:block px-4">
           <img onClick={showNavHandler} src="../../hamburger.svg" alt="hamb" width={25} height={25} />
@@ -37,11 +53,22 @@ const Nav = () => {
              <NavLink to={"/blog"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Блог</NavLink>
              <NavLink to={"/prices"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')}> Услуги</NavLink>
              <NavLink to={"/contacts"} className={({isActive}) => (isActive ? ' underline text-darkwood' : ' hover:text-darkwood')} >  Контакти</NavLink>
-             <a href='tel:+359893711399' >
+             {/* <a href='tel:+359893711399'    */}
+             <div
+              onClick={(e) => {
+                e.preventDefault(); 
+                navigate('/')
+                setTimeout(() => {
+                  const element = document.getElementById("writeUs");
+                  element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+                }, 200);
+              }}  
+              >
               <div className=" mx-auto rounded-full animate-bounce">
                 <Button bg="btn-primary">Запазете час</Button>
               </div>
-             </a>
+              </div>
+             {/* </a> */}
             </div>
         </div>
       </section>

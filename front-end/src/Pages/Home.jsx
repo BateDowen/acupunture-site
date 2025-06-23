@@ -29,6 +29,11 @@ const Home = () => {
     let { email, name, phone, message } = Object.fromEntries(formData);
     showLoader();
     writeMeEmail(email, name, phone, message).then((result) => {
+      window.fbq('track', 'Lead', {
+        name: name,
+        email: email,
+        phone: phone
+      });
       hideLoader();
       ev.target.reset();
     });
@@ -116,7 +121,7 @@ const Home = () => {
       <div className="mb-5 mx-auto">
         <Prices inHomePage={true} />
       </div>
-      <div className="mx-auto py-5 bg-lightgray ">
+      <div id='writeUs' className="mx-auto py-5 bg-lightgray ">
         <h3 className={`uppercase ${titleCss} py-6`}>Пишете ни</h3>
         <Form btnText="Изпрати" message={true} onSubmit={writeEmail} />
       </div>
